@@ -1,0 +1,354 @@
+{
+    "title": "Interactieve leerpaden!",
+    "description": "TO BE DETERMINED! Algemene beschrijving van de tool gaat hier",
+    "goals": {
+      "id": 1,
+      "title": "Doelstellingen",
+      "list": [
+        "Student kan de functie en het effect van de verschillende gespreksvaardigheden herkennen (actief luisteren, samenvatten, doorvragen, echoën en gevoelensreflectie).",
+        "Student reflecteert over het doel en het effect van de verschillende gespreksvaardigheden.",
+        "De student kan deskundig en menswaardig omgaan met existentiële vragen en zich hierbij richten op de behoeften van de zorgvrager."
+      ]
+    },
+    "theory": {
+      "id": 2,
+      "title": "Theorie",
+      "description": "De theorie overloopt 4 pijlers: Professionele houding, Gespreksvaardigheden, Omgaan met emoties en Psychosociale achtergrond.",
+      "list": [
+        {
+          "block": "1",
+          "title": "Professionele houding",
+          "content": [
+            {
+              "title": "IERA kader",
+              "descr": "een boodschap bestaat uit vier betekenislagen en het is belangrijk om als zorgverlener de uitspraak van een zorgvrager op deze vier niveau’s te behandelen. Valkuil: alleen ingaan op het inhoudelijke niveau.",
+              "content": [
+                {
+                  "title": "Inhoud",
+                  "descr": "De inhoud, feitelijke informatie, wat wordt gezegd."
+                },
+                {
+                  "title": "Expressief",
+                  "descr": "Oppikken op welke manier zorgvrager iets zegt, welke emotie is zichtbaar/hoorbaar/voelbaar, met welke lichaamstaal, ..."
+                },
+                {
+                  "title": "Relationeel",
+                  "descr": "Hoe kijkt de zorgvrager naar jou, wat vindt de ander van jou, binnen welke relaties gebeurt de communicatie, ..."
+                },{
+                  "title": "Appellerend",
+                  "descr": "Wat verwacht de zorgvrager van jou, wat wil de zorgvrager bij jou bereiken (expliciet of impliciet)?"
+                }]
+            },{
+              "title": "Basishouding",
+              "descr": "De basishouding van een zorgverlener wordt gekenmerkt door:",
+              "content": [
+                {
+                  "title": "Echtheid",
+                  "descr": "De zorgverlener is zich bewust van de eigen gevoelens, is oprecht geïnteresseerd in de zorgvrager én stemt de eigen gevoelens/het eigen gedrag af op de zorgvrager."
+                },
+                {
+                  "title": "Empathie",
+                  "descr": "De zorgverlener leeft zich in de zorgvrager in en wil de ervaringen/belevingswereld van de zorgvrager begrijpen."
+                },
+                {
+                  "title": "Onvoorwaardelijke aanvaarding en respect",
+                  "descr": "De zorgverlener aanvaardt de belevingswereld van de zorgvrager en behoudt een respectvolle houding ondanks mogelijke negatieve eigenschappen of negatief gedrag van de zorgvrager."
+                }]
+            }
+          ]
+        },{
+          "block": "2",
+          "title": "Gespreksvaardigheden",
+          "content": [
+            {
+              "title": "Actief luisteren",
+              "descr": "Niet alleen luisteren naar de woorden (inhoud of feiten), maar ook de betekenis en gevoelens van de ander willen begrijpen. Vijf kenmerken van actief luisteren: aandacht geven, laten zien dat je luistert, terugkoppelen, je mening/oordeel uitstellen en gepast reageren."
+            },{
+              "title": "Samenvatten",
+              "descr": "In eigen woorden (maar zonder interpretatie) herhalen van de essentie van één langere boodschap of het verhaal van de ander met als doel het gesprek te structureren of na te gaan of je de ander begrepen hebt. "
+            },{
+              "title": "Doorvragen",
+              "descr": "Aan de hand van open of gesloten vragen de ander uitnodigen om verder te vertellen of nagaan of je de ander begrepen hebt of het gesprek in een bepaalde richting sturen."
+            },{
+              "title": "Echoën",
+              "descr": "letterlijk en krachtig herhalen van een betekenisvol woord of kort deel van een zin (wat volgens jou de essentie van de boodschap is - eventueel in vraagvorm)."
+            },{
+              "title": "Gevoelensreflectie",
+              "descr": "het onderliggende gevoel proberen te benoemen - in vraagvorm!"
+            }
+          ]
+        }
+        
+      ]
+    },
+    "walkthrough":{
+      "desc": "In dit interactief scenario ga je stap per stap een scene voorgeschoteld krijgen. Per scene dien je de juiste reactie aan te duiden en je argumentatie neer te schrijven. Na elke keuze volgt de feedback. Op het einde van het scenario krijg je een overzicht van al jouw keuzes en argumentatie. \\n Gelieve hieronder jouw naam en school email op te geven."
+    },
+    "scenarios": [
+      {
+        "id": 1,
+        "title": "Levensbeschouwing",
+        "description": "Dit is een algemene beschrijving van dit scenario. In te vullen naar believen (of niet)",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Startscene",
+            "description": "Hier kan je een mogelijke beschrijving plaatsen van deze stap",
+            "videoId": "py53-Lz2aS0",
+            "titleChoiceA": "Iedereen ligt 's nachts wel eens wakker",
+            "videoIdChoiceA": "IvTLE25AzeQ",
+            "titleChoiceB": "Te oud voor geworden?",
+            "videoIdChoiceB": "mwPB8T30EFU",
+            "feedbackA": {
+              "correct": false,
+              "explanation": "In communicatie zijn er verschillende veelgemaakte fouten: verbloemen, minimaliseren, verrechtvaardigen/rationaliseren, over eigen ervaringen praten, in discussie gaan, zorgvrager een oplossing opdringen, negeren van gevoelens"
+            },
+            "feedbackB": {
+              "correct": true,
+              "explanation": "Zorgverlener gebruikt hier 'echoën' als gespreksvaardigheid en stimuleert op die manier de zorgvrager om verder te praten.   Het gesprek is net gestart waardoor je nog niet veel informatie hebt. Door bij de woorden van de zorgvrager te blijven, wordt de zorgvrager uitgedaagd om verder te vertellen enerzijds en voorkom je eigen invulling anderzijds."
+            }
+          },
+          {
+            "step": 2,
+            "title": "Vervolg scene 1",
+            "description": "Hier kan je een mogelijke beschrijving plaatsen van deze stap",
+            "videoId": "py53-Lz2aS0",
+            "titleChoiceA": "Bedoel je dan dat je pijn hebt 's nachts?",
+            "videoIdChoiceA": "IvTLE25AzeQ",
+            "titleChoiceB": "Met ouder worden, worden de kwaaltjes er ook niet minder op natuurlijk.",
+            "videoIdChoiceB": "mwPB8T30EFU",
+            "feedbackA": {
+              "correct": true,
+              "explanation": "Zorgverlener vraagt door aan de hand van een gesloten vragen. Op die manier maakt ze de boodschap van de zorgvrager concreet + checkt ze of ze de boodschap goed begrepen heeft + eventueel kan de zorgvrager hier nog meer over vertellen."
+            },
+            "feedbackB": {
+              "correct": false,
+              "explanation": "Zorgverlener maakt de fout van het verrechtvaardigen/rationaliseren. Hierbij geeft de zorgverlener een rationele verklaring voor de ervaring van de zorgvrager. Het effect is echter dat de zorgvrager zich niet gehoord voelt, zich niet ernstig genomen voelt en het gesprek stilvalt."
+            }
+          },
+          {
+            "step": 3,
+            "title": "Vervolg scene 2",
+            "description": "Hier kan je een mogelijke beschrijving plaatsen van deze stap",
+            "videoId": "py53-Lz2aS0",
+            "titleChoiceA": "Oei, hoe bedoel je dat?",
+            "videoIdChoiceA": "IvTLE25AzeQ",
+            "titleChoiceB": "Het is niet omdat je ouder wordt dat het leven geen zin meer heeft.",
+            "videoIdChoiceB": "mwPB8T30EFU",
+            "feedbackA": {
+              "correct": true,
+              "explanation": "Zorgverlener geeft een korte, echte reactie ('oei') en vraagt door aan de hand van een open vraag. Op die manier nodigt ze de zorgvrager uit om meer te vertellen en creëert ze een goede zorgrelatie."
+            },
+            "feedbackB": {
+              "correct": false,
+              "explanation": "Zorgverlener maakt de fout van het in discussie gaan. Ze gaat in discussie met de zorgvrager over diens ervaring en bepaalt voor de zorgvrager hoe ze zich mag/moet voelen of wat ze mag/moet ervaren. Het effect is echter dat de zorgvrager zich niet gehoord voelt, zich niet erkend voelt in haar beleving en het gesprek stilvalt. Zorgverlener negeert de psychosociale achtergrond van de zorgvrager."
+            }
+          }
+        ],
+        "final": {
+          "videoId": "py53-Lz2aS0",
+          "paragraphs":[
+            "In dit gespreksfragment heeft de zorgverlener een onmiddellijke behoefte van de zorgvrager (het kunnen rusten) kunnen invullen nadat ze geëxploreerd heeft wat precies de (levens)moeheid omvat en betekent voor de zorgvrager.",
+            "Uitspraken waarbij de zorgvrager een ‘wens tot levenseinde’ uit, bestaan in verschillende gradaties. Dit kan gaan van een ‘overschouwen van het leven’ over ‘levensmoeheid’ tot ‘effectieve doodswensen’. De inhoud van dergelijke gesprekken worden steeds gedeeld met het multidisciplinair team om de hulpvraag duidelijk te krijgen, risicofactoren die aan de basis liggen van eventuele levensmoeheid op te sporen én de nodige ondersteuning vanuit het volledige team te kunnen geven.",
+            "Dit fragment gebruikt het thema ‘levensbeschouwing’ om het doel en effect van een aantal gespreksvaardigheden te duiden. Het kan een voorbeeld geven van hoe je in dialoog kan blijven met de zorgvrager. Elk verhaal is uniek en daarom is het ook belangrijk om jouw eigen dialoog te kunnen aanpassen aan een concrete zorgsituatie.",
+            "Niet alleen elk verhaal, maar ook elk gesprek is uniek. Dit gespreksfragment heeft als doel ‘een goed voorbeeld’ te zijn, naast andere mogelijke goede voorbeelden.",
+            "Ben je geboeid geraakt door het thema ‘Levensbeschouwing’, dan kan je op volgende websites nog meer informatie vinden:"
+          ],
+          "links": [
+            {
+              "title": "De ontwikkeling van doodsgedachten bij ouderen. Suïcidepreventie bij ouderen - Praktijkadviezen voor zorg- en hulpverleners.",
+              "url": "https://www.vlesp.be/publicaties"
+            },
+            {
+              "title": "Ethisch advies rond levensmoeheid",
+              "url": "https://www.zorgneticuro.be/sites/default/files/201112%20Ethisch%20advies%2022%20levensmoeheid%20def.pdf"
+            }
+          ]
+        }
+      },{
+        "id": 5,
+        "title": "Omgaan met emoties",
+        "description": "In dit scenario ontmoet de hulpverlener een zorgvrager die angstig is voor zijn komende operatie.",
+        "goals": [
+            {"title": "", "description": "De doelstelling van het gesprek is dat je in staat bent om de emotie te hanteren. Dit kan door te focussen op de behoefte die verscholen zit achter de emotie en deze vervolgens in te vullen."},
+            {"title": "", "description": "Zo heeft iemand die angstig is behoefte aan veiligheid. Veiligheid kan geboden worden door informatie te geven, zorgen voor afleiding, nabijheid van een vertrouwenspersoon, samen dingen uitvoeren."},
+            {"title": "", "description": "De behoefte achter verdriet is troost vinden. Zo gaan mensen met hun verdriet regelmatig anderen opzoeken om hun verhaal te kunnen vertellen."},
+            {"title": "", "description": "Iemand die boos is wil gehoord worden. Hier zal luisteren deze behoefte invullen en pas nadien is er ruimte om bespreken hoe men tot een oplossing kan komen."},
+            {"title": "", "description": "De fasen in het hanteren van een emotie zijn", 
+            "content": [
+                {"title": "", "description": "Voelen - Opmerken van de emotie"},
+                {"title": "", "description": "Benoemen - Benoemen van de emotie"},
+                {"title": "", "description": "Toekennen - Achterhalen van waar de emotie vandaan komt"},
+                {"title": "", "description": "Actie - De behoefte invullen en hulp bieden"}
+            ]}
+        ],
+        "steps": [
+          {
+            "step": 1,
+            "title": "Stap 1",
+            "description": "Een zorgvrager dient nuchter te zijn voor een operatie. Wat is volgens jou de beste werkwijze om af te toetsen of de zorgvrager nuchter is?",
+            "videoId": "py53-Lz2aS0",
+            "titleChoiceA": "Wanneer heb je voor het laatst iets gegeten of gedronken?",
+            "videoIdChoiceA": "IvTLE25AzeQ",
+            "titleChoiceB": "Wanneer heb je voor het laatst gegeten?",
+            "videoIdChoiceB": "mwPB8T30EFU",
+            "titleChoiceC": "Sinds wanneer ben je nuchter?",
+            "videoIdChoiceC": "py53-Lz2aS0",
+            "feedbackA": {
+              "correct": false,
+              "explanation": "Dit is een voorbeeld van een dubbele vraagstelling. Mensen zijn geneigd om enkel te antwoorden op de laatste vraag. Hier krijg je dus enkel een antwoord op ‘wanneer het laatst gedronken werd’. De zorgvrager is zenuwachtig. Dit maakt het moeilijker om zich te concentreren op een gesprek. Korte en concrete vragen zijn in dit geval meer geschikt."
+            },
+            "feedbackB": {
+              "correct": true,
+              "explanation": "Dit is een gerichte vraag met focus op enkel het eten. Nadien wordt nog gevraagd wanneer het laatst werd gedronken. De vraag is kort en concreet waardoor de zorgverlener ook een helder antwoord krijgt."
+            },
+            "feedbackC": {
+                "correct": false,
+                "explanation": "Nuchter is een vakterm dat niet door elke persoon begrepen wordt. Hier is het gevaar dat een eigen invulling gegeven wordt van wat dan precies nuchter zijn inhoudt zoals bijvoorbeeld geen alcohol gedronken."
+              }
+          },
+          {
+            "step": 2,
+            "title": "Stap 2",
+            "description": "Herkennen van emoties",
+            "videoId": "py53-Lz2aS0",
+            "titleChoiceA": "Ik zie dat je nerveus bent voor de operatie. Klopt dat?",
+            "videoIdChoiceA": "IvTLE25AzeQ",
+            "titleChoiceB": "Nog een beetje geduld, we werken zo snel we kunnen.",
+            "videoIdChoiceB": "mwPB8T30EFU",
+            "feedbackA": {
+              "correct": true,
+              "explanation": "De uitspraak ‘dat die operatie maar snel komt’ heeft een inhoudelijk (de operatie mag snel doorgaan), een expressief (schuifelen op de stoel, zuchten, gezichtsuitdrukking, je voelt nervositeit/ angst), relationeel (afhankelijke positie wordt aangegeven met deze zin namelijk anderen bepalen wanneer de operatie doorgaat) en appellerend niveau (impliciete vraag naar zorgverlener om voort te maken). De zorgverlener merkt de emotie op en schakelt over naar het expressief niveau waarbij ze de emotie benoemt en dus teruggeeft aan de zorgvrager. De zorgverlener toetst hier ook af of haar indruk juist is en nodigt uit om verder te praten."
+            },
+            "feedbackB": {
+              "correct": false,
+              "explanation": "De zorgverlener kiest om in te gaan op het appellerend niveau zonder eerst de gevoelens de exploreren.  Praten over de emotie helpt afstand te nemen van het ervaren gevoel. Als hulpverlener geef je dan ook erkenning aan een persoon. Je erkent zijn beleving die zorgt voor de emotie."
+            }
+            
+          },
+          {
+            "step": 3,
+            "title": "Stap 3",
+            "description": "Toekennen van emoties",
+            "videoId": "py53-Lz2aS0",
+            "titleChoiceA": "Oh maar die horrorverhalen, je moet daar niet naar luisteren. Uiteindelijk is dat maar sensatie. Alles zal hier heel goed verlopen.",
+            "videoIdChoiceA": "IvTLE25AzeQ",
+            "titleChoiceB": "En pieker je daarover?",
+            "videoIdChoiceB": "mwPB8T30EFU",
+            "titleChoiceC": "Ken je mensen die niet meer wakker geworden zijn?",
+            "videoIdChoiceC": "py53-Lz2aS0",
+            "feedbackA": {
+              "correct": false,
+              "explanation": "De emoties worden weggewuifd door een belofte te maken dat niet 100% zeker is. Dit is een voorbeeld van negeren van emoties."
+            },
+            "feedbackB": {
+              "correct": true,
+              "explanation": "De zorgverlener herkent het cognitief kenmerk van angst bij de zorgvrager en geeft deze terug. Hierdoor kan de zorgvrager nadenken over de gevolgen van angst voor zichzelf enerzijds en anderzijds kijkt hij hierdoor van op afstand naar zijn eigen gevoelens. "
+            },
+            "feedbackC": {
+                "correct": false,
+                "explanation": "De zorgverlener blijft ingaan op negatieve gedachten waardoor angst kan toenemen. Hanteren van emoties bekent ook het voorkomen dat emoties de zorgvrager overspoelen. Probeer momenten te herkennen die aangeven dat het beter is om te stoppen met doorvragen en over te gaan naar het invullen van de behoefte."
+              }
+          }
+        ],
+        "final": {
+          "videoId": "py53-Lz2aS0",
+          "paragraphs":["De zorgverlener heeft herkend dat de zorgvrager angstig is voor de operatie. Ze heeft de behoefte van veiligheid ingevuld door informatie te geven over het verloop van de dag, duidelijk te maken dat ze beschikbaar is door te wijzen naar het oproepsysteem en te vragen naar hoe hij zich kan afleiden."],
+          "links": [
+            
+          ]
+        }
+      },
+      {
+        "id": 6,
+        "title": "Ontslaggesprek",
+        "description": "Dit is een algemene beschrijving van dit scenario. In te vullen naar believen (of niet)",
+        "goals": [
+            {"title": "", "description": "Zorg evalueren en beleving van zorgvrager bevragen"},
+            {"title": "", "description": "Voorlichting leefregels en nazorg. Hierbij is het belangrijk om volgende onderwerpen te overlopen.", 
+            "content": [
+                {"title": "", "description": "Dagelijkse activiteiten: wat kan wel/niet zoals bijvoorbeeld het nemen van een bad"},
+                {"title": "", "description": "Nazorg: welke zorg na ontslag nog nodig is zoals wondzorg"},
+                {"title": "", "description": "Hulpmiddelen: geven van voorschrift en uitleg als bijvoorbeeld verplaatsingsmateriaal of verzorgingsmateriaal ook thuis nodig is"},
+                {"title": "", "description": "Complicaties en medische vragen: bij welke symptomen het nodig is om de huisarts te contacteren"},
+                {"title": "", "description": "Gevolgen dagelijks leven: hoe men met nog aanwezige klachten kan omgaan"},
+                {"title": "", "description": "Medicatie: het medicatievoorschrift overlopen en uitleg geven"},
+                {"title": "", "description": "(Vervolg) afspraken: overzicht met vervolgafspraken en contactgegevens overlopen"},
+                {"title": "", "description": "Steun: navragen bij wie men terecht kan voor hulp uit de naaste omgeving"}
+    
+            ]},
+            {"title": "", "description": "Afscheid nemen: Het gesprek wordt vervolgens afgesloten door jouw contactgegevens mee te geven samen met de nodige documenten en hem/haar een goede thuiskomst te wensen"},
+            {"title": "", "description": "Vragen van zorgvrager beantwoorden/ controleren of informatie begrepen werd"},
+            {"title": "", "description": "Afscheid nemen: Het gesprek wordt vervolgens afgesloten door jouw contactgegevens mee te geven samen met de nodige documenten en hem/haar een goede thuiskomst te wensen"}
+        ],
+        "steps": [
+          {
+            "step": 1,
+            "title": "Stap 1",
+            "description": "Wat is een goede manier om een ontslaggesprek in te leiden?",
+            "videoId": "py53-Lz2aS0",
+            "titleChoiceA": "Ik heb goed nieuws: je mag met ontslag!",
+            "videoIdChoiceA": "IvTLE25AzeQ",
+            "titleChoiceB": "Je mag zo dadelijk terug naar huis en daarom kom ik eerst tot bij u. Hoe voelt het voor jou om op ontslag te gaan?",
+            "videoIdChoiceB": "mwPB8T30EFU",
+            "feedbackA": {
+              "correct": false,
+              "explanation": "De zorgverlener vult zelf in hoe de zorgvrager zich zou moeten voelen bij het ontslag uit het ziekenhuis. Dit kan de zorgvrager afremmen om alsnog zijn eigen gevoel te delen. Niet alle zorgvragers keren graag terug naar huis. Angst en onzekerheid om het verder zonder professionele zorg te doen kan aanwezig zijn."
+            },
+            "feedbackB": {
+              "correct": true,
+              "explanation": "Hier vult de zorgverlener niet in voor de ander (NIVEA). Er wordt een open vraagstelling gebruikt en deze wordt op een neutrale wijze gesteld. Hierdoor krijgt de zorgvrager ruimte om zowel goede als minder goede ervaringen te delen."
+            }
+          },
+          {
+            "step": 2,
+            "title": "Stap 2",
+            "description": "Omgaan met negatieve ervaring. Welke reactie kies jij?",
+            "videoId": "py53-Lz2aS0",
+            "titleChoiceA": "Niemand is voor zijn plezier in het ziekenhuis hé. Maar kijk, je mag al terug naar huis.",
+            "videoIdChoiceA": "IvTLE25AzeQ",
+            "titleChoiceB": "Dan moet het nog komen?",
+            "videoIdChoiceB": "mwPB8T30EFU",
+            "feedbackA": {
+              "correct": false,
+              "explanation": "Door deze reactie wordt de ervaring van de zorgvrager genegeerd. Hierdoor dreigt het gesprek te stoppen.  Het mogen ventileren van negatieve ervaringen is een onderdeel van coping. "
+            },
+            "feedbackB": {
+              "correct": true,
+              "explanation": "De gespreksvaardigheid echoën wordt hier gebruikt. Dit stimuleert de zorgvrager om zijn uitspraak “en dan moet het ergste nog komen” verder te verklaren."
+            }
+          },
+          {
+            "step": 3,
+            "title": "Stap 3",
+            "description": "Hoe kan je de zorgvrager het rijverbod laten naleven?",
+            "videoId": "py53-Lz2aS0",
+            "titleChoiceA": "Het is echt belangrijk. Wie kan je bellen?",
+            "videoIdChoiceA": "IvTLE25AzeQ",
+            "titleChoiceB": "We hebben je daar voor de operatie over geïnformeerd, je moet nu niet doen alsof je van niets weet!",
+            "videoIdChoiceB": "mwPB8T30EFU",
+            "feedbackA": {
+              "correct": true,
+              "explanation": "De zorgverlener neemt een assertieve houding aan. De basishouding is respectvol. Met de vraag “wie kan je bellen” stuurt de hulpverlener de zorgvrager naar het gewenste gedrag."
+            },
+            "feedbackB": {
+              "correct": false,
+              "explanation": "In deze uitspraak zit een oordeel verborgen, namelijk deze zorgvrager liegt. Op deze manier komt de zorgverlener in conflict met de zorgvrager. De houding is niet meer assertief noch respectvol maar agressief."
+            }
+          }
+        ],
+        "final": {
+          "videoId": "py53-Lz2aS0",
+          "paragraphs":[
+            "Het ontslaggesprek is afgelopen en de zorgvrager kan voldoende geïnformeerd naar huis. Volgende aandachtspunten zijn zeker ook belangrijk naast degene die in het fragment aan bod kwamen:",
+            "Zet zaken op papier. Maak een ontslaggesprek niet langdradig maar focus op die zaken die belangrijk zijn in de nazorg. Check of de zorgvrager alles begrepen heeft.",
+            "Kijk naar de reactie van de zorgvrager tijdens het gesprek. Non-verbaal kan hij/zij signalen geven dat de informatie niet begrepen wordt. Geef ruimte aan de zorgvrager om vragen te stellen.",
+            "Laat het ontslaggesprek uitvoeren door de verpleegkundige die het meest voor deze zorgvrager zorgde."
+          ],
+          "links": [
+            
+          ]
+        }
+      }
+    ]
+  }

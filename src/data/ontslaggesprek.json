@@ -1,0 +1,95 @@
+{
+    "id": 6,
+    "title": "Ontslaggesprek",
+    "description": "Dit is een algemene beschrijving van dit scenario. In te vullen naar believen (of niet)",
+    "goals": {
+      "title": "Doelstellingen",
+      "description": "In dit scenario komen een aantal aandachtspunten tijdens het uitvoeren van een ontslaggesprek aan bod. Een goed uitgevoerd ontslaggesprek voorkomt dat de zorgvrager onvoldoende geïnformeerd het ziekenhuis verlaat. Bezorgdheid, angst, complicaties omdat bijvoorbeeld een wonde onjuist verzorgd werd en heropnames kunnen vermeden worden. De doelstelling is dan ook dat je in staat bent om de zorgvrager te informeren over de nodige nazorg van zijn gezondheidstoestand bij ontslag.",
+      "list": [
+        {"title": "", "description": "Zorg evalueren en beleving van zorgvrager bevragen"},
+        {"title": "", "description": "Voorlichting leefregels en nazorg. Hierbij is het belangrijk om volgende onderwerpen te overlopen.", 
+        "content": [
+            {"title": "", "description": "Dagelijkse activiteiten: wat kan wel/niet zoals bijvoorbeeld het nemen van een bad"},
+            {"title": "", "description": "Nazorg: welke zorg na ontslag nog nodig is zoals wondzorg"},
+            {"title": "", "description": "Hulpmiddelen: geven van voorschrift en uitleg als bijvoorbeeld verplaatsingsmateriaal of verzorgingsmateriaal ook thuis nodig is"},
+            {"title": "", "description": "Complicaties en medische vragen: bij welke symptomen het nodig is om de huisarts te contacteren"},
+            {"title": "", "description": "Gevolgen dagelijks leven: hoe men met nog aanwezige klachten kan omgaan"},
+            {"title": "", "description": "Medicatie: het medicatievoorschrift overlopen en uitleg geven"},
+            {"title": "", "description": "(Vervolg) afspraken: overzicht met vervolgafspraken en contactgegevens overlopen"},
+            {"title": "", "description": "Steun: navragen bij wie men terecht kan voor hulp uit de naaste omgeving"}
+
+        ]},
+        {"title": "", "description": "Afscheid nemen: Het gesprek wordt vervolgens afgesloten door jouw contactgegevens mee te geven samen met de nodige documenten en hem/haar een goede thuiskomst te wensen"},
+        {"title": "", "description": "Vragen van zorgvrager beantwoorden/ controleren of informatie begrepen werd"},
+        {"title": "", "description": "Afscheid nemen: Het gesprek wordt vervolgens afgesloten door jouw contactgegevens mee te geven samen met de nodige documenten en hem/haar een goede thuiskomst te wensen"}
+      ]
+    },
+    "steps": [
+      {
+        "step": 1,
+        "title": "Stap 1",
+        "description": "Wat is een goede manier om een ontslaggesprek in te leiden?",
+        "videoId": "xhEa1i5TeDQ",
+        "titleChoiceA": "Ik heb goed nieuws: je mag met ontslag!",
+        "videoIdChoiceA": "pe6XCgsxY04",
+        "titleChoiceB": "Je mag zo dadelijk terug naar huis en daarom kom ik eerst tot bij u. Hoe voelt het voor jou om op ontslag te gaan?",
+        "videoIdChoiceB": "6zvJ12qGX_A",
+        "feedbackA": {
+          "correct": false,
+          "explanation": "De zorgverlener vult zelf in hoe de zorgvrager zich zou moeten voelen bij het ontslag uit het ziekenhuis. Dit kan de zorgvrager afremmen om alsnog zijn eigen gevoel te delen. Niet alle zorgvragers keren graag terug naar huis. Angst en onzekerheid om het verder zonder professionele zorg te doen kan aanwezig zijn."
+        },
+        "feedbackB": {
+          "correct": true,
+          "explanation": "Hier vult de zorgverlener niet in voor de ander (NIVEA). Er wordt een open vraagstelling gebruikt en deze wordt op een neutrale wijze gesteld. Hierdoor krijgt de zorgvrager ruimte om zowel goede als minder goede ervaringen te delen."
+        }
+      },
+      {
+        "step": 2,
+        "title": "Stap 2",
+        "description": "Omgaan met negatieve ervaring. Welke reactie kies jij?",
+        "videoId": "uuPD5GKc57E",
+        "titleChoiceA": "Niemand is voor zijn plezier in het ziekenhuis hé. Maar kijk, je mag al terug naar huis.",
+        "videoIdChoiceA": "5AvrETdZ3no",
+        "titleChoiceB": "Dan moet het nog komen?",
+        "videoIdChoiceB": "G6TDpnA4XRU",
+        "feedbackA": {
+          "correct": false,
+          "explanation": "Door deze reactie wordt de ervaring van de zorgvrager genegeerd. Hierdoor dreigt het gesprek te stoppen.  Het mogen ventileren van negatieve ervaringen is een onderdeel van coping. "
+        },
+        "feedbackB": {
+          "correct": true,
+          "explanation": "De gespreksvaardigheid echoën wordt hier gebruikt. Dit stimuleert de zorgvrager om zijn uitspraak “en dan moet het ergste nog komen” verder te verklaren."
+        }
+      },
+      {
+        "step": 3,
+        "title": "Stap 3",
+        "description": "Hoe kan je de zorgvrager het rijverbod laten naleven?",
+        "videoId": "-iiBbi2HLak",
+        "titleChoiceA": "Het is echt belangrijk. Wie kan je bellen?",
+        "videoIdChoiceA": "l8lyiCRtaHQ",
+        "titleChoiceB": "We hebben je daar voor de operatie over geïnformeerd, je moet nu niet doen alsof je van niets weet!",
+        "videoIdChoiceB": "j-09SokoxaE",
+        "feedbackA": {
+          "correct": true,
+          "explanation": "De zorgverlener neemt een assertieve houding aan. De basishouding is respectvol. Met de vraag “wie kan je bellen” stuurt de hulpverlener de zorgvrager naar het gewenste gedrag."
+        },
+        "feedbackB": {
+          "correct": false,
+          "explanation": "In deze uitspraak zit een oordeel verborgen, namelijk deze zorgvrager liegt. Op deze manier komt de zorgverlener in conflict met de zorgvrager. De houding is niet meer assertief noch respectvol maar agressief."
+        }
+      }
+    ],
+    "final": {
+      "videoId": "8vRRUmbfzpE",
+      "paragraphs":[
+        "Het ontslaggesprek is afgelopen en de zorgvrager kan voldoende geïnformeerd naar huis. Volgende aandachtspunten zijn zeker ook belangrijk naast degene die in het fragment aan bod kwamen:",
+        "Zet zaken op papier. Maak een ontslaggesprek niet langdradig maar focus op die zaken die belangrijk zijn in de nazorg. Check of de zorgvrager alles begrepen heeft.",
+        "Kijk naar de reactie van de zorgvrager tijdens het gesprek. Non-verbaal kan hij/zij signalen geven dat de informatie niet begrepen wordt. Geef ruimte aan de zorgvrager om vragen te stellen.",
+        "Laat het ontslaggesprek uitvoeren door de verpleegkundige die het meest voor deze zorgvrager zorgde."
+      ],
+      "links": [
+        
+      ]
+    }
+  }

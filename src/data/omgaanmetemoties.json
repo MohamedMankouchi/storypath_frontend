@@ -1,0 +1,97 @@
+{
+    "id": 5,
+    "title": "Omgaan met emoties",
+    "description": "In dit scenario ontmoet de hulpverlener een zorgvrager die angstig is voor zijn komende operatie.",
+    "goals": {
+      "title": "Doelstellingen",
+      "description": "",
+      "list": [
+        {"title": "", "description": "De doelstelling van het gesprek is dat je in staat bent om de emotie te hanteren. Dit kan door te focussen op de behoefte die verscholen zit achter de emotie en deze vervolgens in te vullen."},
+        {"title": "", "description": "Zo heeft iemand die angstig is behoefte aan veiligheid. Veiligheid kan geboden worden door informatie te geven, zorgen voor afleiding, nabijheid van een vertrouwenspersoon, samen dingen uitvoeren."},
+        {"title": "", "description": "De behoefte achter verdriet is troost vinden. Zo gaan mensen met hun verdriet regelmatig anderen opzoeken om hun verhaal te kunnen vertellen."},
+        {"title": "", "description": "Iemand die boos is wil gehoord worden. Hier zal luisteren deze behoefte invullen en pas nadien is er ruimte om bespreken hoe men tot een oplossing kan komen."},
+        {"title": "", "description": "De fasen in het hanteren van een emotie zijn", 
+        "content": [
+            {"title": "Voelen", "description": "Opmerken van de emotie"},
+            {"title": "", "description": "Benoemen - Benoemen van de emotie"},
+            {"title": "", "description": "Toekennen - Achterhalen van waar de emotie vandaan komt"},
+            {"title": "", "description": "Actie - De behoefte invullen en hulp bieden"}
+        ]}
+    ]},
+    "steps": [
+      {
+        "step": 1,
+        "title": "Stap 1",
+        "description": "Een zorgvrager dient nuchter te zijn voor een operatie. Wat is volgens jou de beste werkwijze om af te toetsen of de zorgvrager nuchter is?",
+        "videoId": "6l8saDrkEg8",
+        "titleChoiceA": "Wanneer heb je voor het laatst iets gegeten of gedronken?",
+        "videoIdChoiceA": "tvqf4KcSra0",
+        "titleChoiceB": "Wanneer heb je voor het laatst gegeten?",
+        "videoIdChoiceB": "myXIzg2iyrU",
+        "titleChoiceC": "Sinds wanneer ben je nuchter?",
+        "videoIdChoiceC": "23-_EaS2NRU",
+        "feedbackA": {
+          "correct": false,
+          "explanation": "Dit is een voorbeeld van een dubbele vraagstelling. Mensen zijn geneigd om enkel te antwoorden op de laatste vraag. Hier krijg je dus enkel een antwoord op ‘wanneer het laatst gedronken werd’. De zorgvrager is zenuwachtig. Dit maakt het moeilijker om zich te concentreren op een gesprek. Korte en concrete vragen zijn in dit geval meer geschikt."
+        },
+        "feedbackB": {
+          "correct": true,
+          "explanation": "Dit is een gerichte vraag met focus op enkel het eten. Nadien wordt nog gevraagd wanneer het laatst werd gedronken. De vraag is kort en concreet waardoor de zorgverlener ook een helder antwoord krijgt."
+        },
+        "feedbackC": {
+            "correct": false,
+            "explanation": "Nuchter is een vakterm dat niet door elke persoon begrepen wordt. Hier is het gevaar dat een eigen invulling gegeven wordt van wat dan precies nuchter zijn inhoudt zoals bijvoorbeeld geen alcohol gedronken."
+          }
+      },
+      {
+        "step": 2,
+        "title": "Stap 2",
+        "description": "Herkennen van emoties",
+        "videoId": "UeOlNb0r1pA",
+        "titleChoiceA": "Ik zie dat je nerveus bent voor de operatie. Klopt dat?",
+        "videoIdChoiceA": "QdEekKHWl5Y",
+        "titleChoiceB": "Nog een beetje geduld, we werken zo snel we kunnen.",
+        "videoIdChoiceB": "KxBgfRck6ok",
+        "feedbackA": {
+          "correct": true,
+          "explanation": "De uitspraak ‘dat die operatie maar snel komt’ heeft een inhoudelijk (de operatie mag snel doorgaan), een expressief (schuifelen op de stoel, zuchten, gezichtsuitdrukking, je voelt nervositeit/ angst), relationeel (afhankelijke positie wordt aangegeven met deze zin namelijk anderen bepalen wanneer de operatie doorgaat) en appellerend niveau (impliciete vraag naar zorgverlener om voort te maken). De zorgverlener merkt de emotie op en schakelt over naar het expressief niveau waarbij ze de emotie benoemt en dus teruggeeft aan de zorgvrager. De zorgverlener toetst hier ook af of haar indruk juist is en nodigt uit om verder te praten."
+        },
+        "feedbackB": {
+          "correct": false,
+          "explanation": "De zorgverlener kiest om in te gaan op het appellerend niveau zonder eerst de gevoelens de exploreren.  Praten over de emotie helpt afstand te nemen van het ervaren gevoel. Als hulpverlener geef je dan ook erkenning aan een persoon. Je erkent zijn beleving die zorgt voor de emotie."
+        }
+        
+      },
+      {
+        "step": 3,
+        "title": "Stap 3",
+        "description": "Toekennen van emoties",
+        "videoId": "fNVJe0c6ixk",
+        "titleChoiceA": "Oh maar die horrorverhalen, je moet daar niet naar luisteren. Uiteindelijk is dat maar sensatie. Alles zal hier heel goed verlopen.",
+        "videoIdChoiceA": "y0TC8NcDVlg",
+        "titleChoiceB": "En pieker je daarover?",
+        "videoIdChoiceB": "QcKE5V_Xmm0",
+        "titleChoiceC": "Ken je mensen die niet meer wakker geworden zijn?",
+        "videoIdChoiceC": "33GpwEgdWJU",
+        "feedbackA": {
+          "correct": false,
+          "explanation": "De emoties worden weggewuifd door een belofte te maken dat niet 100% zeker is. Dit is een voorbeeld van negeren van emoties."
+        },
+        "feedbackB": {
+          "correct": true,
+          "explanation": "De zorgverlener herkent het cognitief kenmerk van angst bij de zorgvrager en geeft deze terug. Hierdoor kan de zorgvrager nadenken over de gevolgen van angst voor zichzelf enerzijds en anderzijds kijkt hij hierdoor van op afstand naar zijn eigen gevoelens. "
+        },
+        "feedbackC": {
+            "correct": false,
+            "explanation": "De zorgverlener blijft ingaan op negatieve gedachten waardoor angst kan toenemen. Hanteren van emoties bekent ook het voorkomen dat emoties de zorgvrager overspoelen. Probeer momenten te herkennen die aangeven dat het beter is om te stoppen met doorvragen en over te gaan naar het invullen van de behoefte."
+          }
+      }
+    ],
+    "final": {
+      "videoId": "XXUnBuFzI_U",
+      "paragraphs":["De zorgverlener heeft herkend dat de zorgvrager angstig is voor de operatie. Ze heeft de behoefte van veiligheid ingevuld door informatie te geven over het verloop van de dag, duidelijk te maken dat ze beschikbaar is door te wijzen naar het oproepsysteem en te vragen naar hoe hij zich kan afleiden."],
+      "links": [
+        
+      ]
+    }
+  }

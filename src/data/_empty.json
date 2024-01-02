@@ -1,0 +1,43 @@
+{
+    "id": 0,
+    "title": "",
+    "description": "",
+    "goals": [
+        {"title": "", "description": ""},
+        {"title": "", "description": "", 
+        "content": [
+            {"title": "", "description": ""},
+            {"title": "", "description": ""}
+        ]}
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Stap 1",
+        "description": "",
+        "videoId": "py53-Lz2aS0",
+        "titleChoiceA": "",
+        "videoIdChoiceA": "IvTLE25AzeQ",
+        "titleChoiceB": "",
+        "videoIdChoiceB": "mwPB8T30EFU",
+        "feedbackA": {
+          "correct": false,
+          "explanation": ""
+        },
+        "feedbackB": {
+          "correct": true,
+          "explanation": ""
+        }
+      }
+    ],
+    "final": {
+      "videoId": "py53-Lz2aS0",
+      "paragraphs":[
+        "",
+        ""
+      ],
+      "links": [
+        
+      ]
+    }
+  }
