@@ -3,7 +3,7 @@ import { Outlet, useLoaderData } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 
 export async function checkUser() {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   if (!token) {
     return false;
   }
@@ -16,6 +16,7 @@ export async function checkUser() {
   const data = await res.json();
 
   if (data.error) {
+    sessionStorage.clear();
     return false;
   }
   return data;

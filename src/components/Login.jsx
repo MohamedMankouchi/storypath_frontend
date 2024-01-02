@@ -48,7 +48,7 @@ const Login = () => {
           fullName: "",
         });
         const token = data.token;
-        localStorage.setItem("token", token);
+        sessionStorage.setItem("token", token);
         const Toast = Swal.mixin({
           toast: true,
           position: "top-end",
