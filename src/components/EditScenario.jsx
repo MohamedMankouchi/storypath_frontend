@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, InputGroup, Form } from "react-bootstrap";
+import { Button, InputGroup, Form, Nav } from "react-bootstrap";
 import {
   Link,
   Navigate,
@@ -13,12 +13,13 @@ import Swal from "sweetalert2";
 export async function getScenario({ params }) {
   const res = await fetch("https://storypathapi.onrender.com/");
   const data = await res.json();
+
   return data.scenarios.filter((el) => el.id == params.id);
 }
 export const EditScenario = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const scenario = useLoaderData();
-  const steps = scenario[0].steps[currentStep];
+  const steps = scenario[0]?.steps[currentStep];
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [changedData, setChangedData] = useState({});
@@ -29,13 +30,16 @@ export const EditScenario = () => {
   }, []);
 
   const handleUpdate = async () => {
-    const res = await fetch(`https://storypathapi.onrender.com/scenario/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(changedData),
-    });
+    const res = await fetch(
+      `https://storypathapi.onrender.com/scenario/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(changedData),
+      }
+    );
     const data = await res.json();
     if (data.status == 200) {
       const Toast = Swal.mixin({
@@ -134,7 +138,9 @@ export const EditScenario = () => {
   };
   return (
     <div>
-      {user?.role == "Admin" || user?.role == "Teacher" ? (
+      {steps == undefined ? (
+        <Navigate to={"/profile"} />
+      ) : user?.role == "Admin" || user?.role == "Teacher" ? (
         isLoading ? (
           "Aan het laden..."
         ) : (
@@ -396,6 +402,8 @@ export const EditScenario = () => {
             </Button>
           </>
         )
+      ) : scenario.length == 0 ? (
+        <Navigate to={"/login"} />
       ) : (
         <Navigate to={"/profile"} />
       )}
