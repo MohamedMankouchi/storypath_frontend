@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { Button, InputGroup, Form } from "react-bootstrap";
 import { checkUser } from "../pages/Infopage";
 import { Navigate, useOutletContext } from "react-router-dom";
+import Spinner from "react-bootstrap/Spinner";
 import Swal from "sweetalert2";
 const Login = () => {
   const { user } = useOutletContext();
 
   const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [loginLoading, setLoginLoading] = useState(false);
+  const [registerLoading, setRegisterLoading] = useState(false);
   const [registerData, setRegisterData] = useState({
     email: "",
     password: "",
@@ -15,6 +18,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    setLoginLoading(true);
     fetch("https://storypathapi.onrender.com/login", {
       method: "POST",
       headers: {
@@ -25,6 +29,7 @@ const Login = () => {
       .then((res) => res.json())
       .then(async (data) => {
         if (data.status == 400 || data.error) {
+          setLoginLoading(false);
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -71,6 +76,7 @@ const Login = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
+    setRegisterLoading(true);
     fetch("https://storypathapi.onrender.com/register", {
       method: "POST",
       headers: {
@@ -81,6 +87,7 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status == 400 || data.error) {
+          setRegisterLoading(false);
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -161,8 +168,19 @@ const Login = () => {
               />
             </InputGroup>
             <br></br>
-            <Button variant="primary" type="submit" onClick={handleLogin}>
-              Aanmelden
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={handleLogin}
+              disabled={loginLoading}
+            >
+              {loginLoading ? (
+                <Spinner animation="border" role="status" size="sm">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              ) : (
+                "Aanmelden"
+              )}{" "}
             </Button>
           </form>
           <hr style={{ marginBottom: "50px", marginTop: "50px" }} />
@@ -226,8 +244,15 @@ const Login = () => {
               type="submit"
               className="mb-5"
               onClick={handleRegister}
+              disabled={registerLoading}
             >
-              Registreer
+              {registerLoading ? (
+                <Spinner animation="border" role="status" size="sm">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              ) : (
+                "Maak account"
+              )}{" "}
             </Button>
           </form>
         </>
