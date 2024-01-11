@@ -260,7 +260,9 @@ export const EditScenario = () => {
               Terug naar profiel{" "}
             </Button>{" "}
             <h2 style={{ marginBottom: "20px" }}>Wijzig scenario </h2>
-            <Form.Label htmlFor="title">Titel</Form.Label>
+            <Form.Label style={{ fontWeight: "bold" }} htmlFor="title">
+              Titel
+            </Form.Label>
             <Form.Control
               placeholder="Titel"
               name="title"
@@ -273,7 +275,9 @@ export const EditScenario = () => {
                 }))
               }
             />
-            <p className="mt-3">Beschrijving</p>
+            <p style={{ fontWeight: "bold" }} className="mt-3">
+              Beschrijving
+            </p>
             <Editor
               value={changedData.description}
               name="description"
@@ -284,7 +288,9 @@ export const EditScenario = () => {
                 }))
               }
             />
-            <p className="mt-3">Gids</p>
+            <p style={{ fontWeight: "bold" }} className="mt-3">
+              Gids
+            </p>
             <Editor
               value={changedData.guide}
               name="guide"
@@ -295,7 +301,9 @@ export const EditScenario = () => {
                 }))
               }
             />
-            <p className="mt-3">Doelstellingen</p>
+            <p style={{ fontWeight: "bold" }} className="mt-3">
+              Doelstellingen
+            </p>
             <Editor
               value={changedData?.goals?.description}
               name="description"
@@ -309,7 +317,9 @@ export const EditScenario = () => {
                 }))
               }
             />
-            <p className="mt-3">Theorie</p>
+            <p style={{ fontWeight: "bold" }} className="mt-3">
+              Theorie
+            </p>
             <Editor
               value={changedData?.theory?.description}
               name="description"
@@ -367,7 +377,7 @@ export const EditScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Beschrijving</p>{" "}
+              <p style={{ fontWeight: "bold" }}>Beschrijving</p>{" "}
               <Editor
                 style={{ marginBottom: "20px" }}
                 value={steps.description}
@@ -376,7 +386,7 @@ export const EditScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Youtube link </p>{" "}
+              <p style={{ fontWeight: "bold" }}>Youtube link </p>{" "}
               <Form.Control
                 style={{ marginBottom: "20px" }}
                 placeholder="Id van youtube video"
@@ -394,7 +404,7 @@ export const EditScenario = () => {
                 }}
               >
                 <div style={{ width: "100%" }}>
-                  <p>Titel keuze A</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>Titel keuze A</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Titel keuze A"
@@ -404,7 +414,7 @@ export const EditScenario = () => {
                       handleStepsUpdate(e.target.value, e.target.name);
                     }}
                   />
-                  <p>Youtube link - Keuze A</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>Youtube link - Keuze A</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Link van youtube video, keuze A"
@@ -416,7 +426,7 @@ export const EditScenario = () => {
                   />
                 </div>
                 <div style={{ width: "100%" }}>
-                  <p>Titel keuze B</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>Titel keuze B</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Titel keuze B"
@@ -426,7 +436,7 @@ export const EditScenario = () => {
                       handleStepsUpdate(e.target.value, e.target.name);
                     }}
                   />
-                  <p>Youtube link - Keuze B</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>Youtube link - Keuze B</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Link van youtube video, keuze B"
@@ -440,7 +450,7 @@ export const EditScenario = () => {
 
                 {steps?.feedbackC ? (
                   <div style={{ width: "100%" }}>
-                    <p>Titel keuze C</p>{" "}
+                    <p style={{ fontWeight: "bold" }}>Titel keuze C</p>{" "}
                     <Form.Control
                       style={{ marginBottom: "20px" }}
                       placeholder="Titel keuze C"
@@ -450,7 +460,7 @@ export const EditScenario = () => {
                         handleStepsUpdate(e.target.value, e.target.name);
                       }}
                     />
-                    <p>Youtube link - Keuze C</p>{" "}
+                    <p style={{ fontWeight: "bold" }}>Youtube link - Keuze C</p>{" "}
                     <Form.Control
                       style={{ marginBottom: "20px" }}
                       placeholder="Link van youtube video, keuze C"
@@ -465,7 +475,7 @@ export const EditScenario = () => {
                   ""
                 )}
               </div>
-              <p>Feedback A</p>{" "}
+              <p style={{ fontWeight: "bold" }}>Feedback A</p>{" "}
               <Editor
                 style={{ marginBottom: "20px" }}
                 value={steps.feedbackA.explanation}
@@ -474,7 +484,7 @@ export const EditScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Feedback B</p>{" "}
+              <p style={{ fontWeight: "bold" }}>Feedback B</p>{" "}
               <Editor
                 style={{ marginBottom: "20px" }}
                 value={steps.feedbackB.explanation}
@@ -485,7 +495,7 @@ export const EditScenario = () => {
               />
               {steps?.feedbackC ? (
                 <>
-                  <p>Feedback C</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>Feedback C</p>{" "}
                   <Editor
                     style={{ marginBottom: "20px" }}
                     value={steps?.feedbackC?.explanation}
@@ -498,7 +508,7 @@ export const EditScenario = () => {
               ) : (
                 ""
               )}
-              <p>Juiste antwoord</p>
+              <p style={{ fontWeight: "bold" }}>Juiste antwoord</p>
               <Form.Check
                 style={{ marginBottom: "20px" }}
                 type="radio"
@@ -554,7 +564,10 @@ export const EditScenario = () => {
               )}
             </div>
             <h2 style={{ marginBottom: "20px" }}>Eindpagina</h2>
-            <p>Youtube link</p>{" "}
+            <p style={{ fontWeight: "bold" }}>
+              {" "}
+              Youtube link - video laatste pagina
+            </p>{" "}
             <Form.Control
               style={{ marginBottom: "20px" }}
               placeholder="Link video voor laatste pagina"
@@ -567,7 +580,7 @@ export const EditScenario = () => {
                 }));
               }}
             />
-            <p>Uitleg</p>{" "}
+            <p style={{ fontWeight: "bold" }}>Uitleg</p>{" "}
             <Editor
               value={changedData.final?.paragraphs}
               name="paragraphs"

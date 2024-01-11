@@ -288,7 +288,9 @@ export const MakeScenario = () => {
               Terug naar profiel{" "}
             </Button>{" "}
             <h2 style={{ marginBottom: "20px" }}>Maak een scenario </h2>
-            <Form.Label htmlFor="title">Titel</Form.Label>
+            <Form.Label style={{ fontWeight: "bold" }} htmlFor="title">
+              Titel
+            </Form.Label>
             <Form.Control
               required
               placeholder="Titel"
@@ -302,7 +304,9 @@ export const MakeScenario = () => {
                 }))
               }
             />
-            <p className="mt-3">Beschrijving</p>
+            <p style={{ fontWeight: "bold" }} className="mt-3">
+              Beschrijving
+            </p>
             <Editor
               value={changedData.description}
               name="description"
@@ -313,7 +317,9 @@ export const MakeScenario = () => {
                 }))
               }
             />
-            <p className="mt-3">Gids</p>
+            <p style={{ fontWeight: "bold" }} className="mt-3">
+              Gids
+            </p>
             <Editor
               value={changedData.guide}
               name="guide"
@@ -324,7 +330,9 @@ export const MakeScenario = () => {
                 }))
               }
             />
-            <p className="mt-3">Doelstellingen</p>
+            <p style={{ fontWeight: "bold" }} className="mt-3">
+              Doelstellingen
+            </p>
             <Editor
               value={changedData?.goals?.description}
               name="description"
@@ -338,7 +346,9 @@ export const MakeScenario = () => {
                 }))
               }
             />
-            <p className="mt-3">Theorie</p>
+            <p style={{ fontWeight: "bold" }} className="mt-3">
+              Theorie
+            </p>
             <Editor
               value={changedData?.theory?.description}
               name="description"
@@ -391,7 +401,7 @@ export const MakeScenario = () => {
                 {" "}
                 Stap : {changedData.steps[currentStep].step}
               </p>
-              <p>Titel van de stap</p>{" "}
+              <p style={{ fontWeight: "bold" }}>Titel van de stap</p>{" "}
               <Form.Control
                 style={{ marginBottom: "20px" }}
                 placeholder="Titel"
@@ -402,7 +412,7 @@ export const MakeScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Beschrijving</p>{" "}
+              <p style={{ fontWeight: "bold" }}>Beschrijving</p>{" "}
               <Editor
                 style={{ marginBottom: "20px" }}
                 value={changedData.steps[currentStep].description}
@@ -411,7 +421,7 @@ export const MakeScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Youtube link</p>{" "}
+              <p style={{ fontWeight: "bold" }}>Youtube link</p>{" "}
               <Form.Control
                 style={{ marginBottom: "20px" }}
                 placeholder="Link van youtube video"
@@ -423,7 +433,7 @@ export const MakeScenario = () => {
               />
               <div style={{ display: "flex", gap: "15px" }}>
                 <div style={{ width: "100%" }}>
-                  <p>Titel keuze A</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>Titel keuze A</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Titel keuze A"
@@ -433,7 +443,7 @@ export const MakeScenario = () => {
                       handleStepsUpdate(e.target.value, e.target.name);
                     }}
                   />
-                  <p>Youtube link - Keuze A</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>Youtube link - Keuze A</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Link van youtube video, keuze A"
@@ -445,7 +455,7 @@ export const MakeScenario = () => {
                   />
                 </div>
                 <div style={{ width: "100%" }}>
-                  <p>Titel keuze B</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>Titel keuze B</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Titel keuze B"
@@ -455,7 +465,7 @@ export const MakeScenario = () => {
                       handleStepsUpdate(e.target.value, e.target.name);
                     }}
                   />
-                  <p>Youtube link - Keuze B</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>Youtube link - Keuze B</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Link van youtube video, keuze B"
@@ -467,7 +477,9 @@ export const MakeScenario = () => {
                   />{" "}
                 </div>
                 <div style={{ width: "100%" }}>
-                  <p>Titel keuze C (optioneel)</p>{" "}
+                  <p style={{ fontWeight: "bold" }}>
+                    Titel keuze C (optioneel)
+                  </p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Titel keuze C"
@@ -477,7 +489,9 @@ export const MakeScenario = () => {
                       handleStepsUpdate(e.target.value, e.target.name);
                     }}
                   />
-                  <p>Youtube link - Keuze C (optioneel) </p>{" "}
+                  <p style={{ fontWeight: "bold" }}>
+                    Youtube link - Keuze C (optioneel){" "}
+                  </p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
                     placeholder="Link van youtube video, keuze C"
@@ -489,7 +503,7 @@ export const MakeScenario = () => {
                   />{" "}
                 </div>
               </div>
-              <p>Feedback A</p>{" "}
+              <p style={{ fontWeight: "bold" }}>Feedback A</p>{" "}
               <Editor
                 style={{ marginBottom: "20px" }}
                 value={changedData.steps[currentStep].feedbackA?.explanation}
@@ -498,7 +512,7 @@ export const MakeScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Feedback B</p>{" "}
+              <p style={{ fontWeight: "bold" }}>Feedback B</p>{" "}
               <Editor
                 style={{ marginBottom: "20px" }}
                 value={changedData.steps[currentStep].feedbackB?.explanation}
@@ -507,7 +521,7 @@ export const MakeScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Feedback C (optioneel)</p>{" "}
+              <p style={{ fontWeight: "bold" }}>Feedback C (optioneel)</p>{" "}
               <Editor
                 style={{ marginBottom: "20px" }}
                 value={changedData.steps[currentStep].feedbackC?.explanation}
@@ -516,7 +530,7 @@ export const MakeScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Juiste antwoord</p>
+              <p style={{ fontWeight: "bold" }}>Juiste antwoord</p>
               <Form.Check
                 style={{ marginBottom: "20px" }}
                 type="radio"
@@ -561,7 +575,9 @@ export const MakeScenario = () => {
               />
             </div>
             <h2 style={{ marginBottom: "20px" }}>Eindpagina</h2>
-            <p>Youtube link - video laatste pagina</p>{" "}
+            <p style={{ fontWeight: "bold" }}>
+              Youtube link - video laatste pagina
+            </p>{" "}
             <Form.Control
               style={{ marginBottom: "20px" }}
               placeholder="Link video voor laatste pagina"
@@ -574,7 +590,7 @@ export const MakeScenario = () => {
                 }));
               }}
             />
-            <p>Uitleg</p>{" "}
+            <p style={{ fontWeight: "bold" }}>Uitleg</p>{" "}
             <Editor
               value={changedData.final?.paragraphs}
               name="paragraphs"
