@@ -407,7 +407,7 @@ export const EditScenario = () => {
                   <p>Youtube link - Keuze A</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
-                    placeholder="Id van youtube video, keuze A"
+                    placeholder="Link van youtube video, keuze A"
                     name="videoIdChoiceA"
                     value={steps.videoIdChoiceA}
                     onChange={(e) => {
@@ -429,7 +429,7 @@ export const EditScenario = () => {
                   <p>Youtube link - Keuze B</p>{" "}
                   <Form.Control
                     style={{ marginBottom: "20px" }}
-                    placeholder="Id van youtube video, keuze B"
+                    placeholder="Link van youtube video, keuze B"
                     name="videoIdChoiceB"
                     value={steps.videoIdChoiceB}
                     onChange={(e) => {
@@ -437,6 +437,33 @@ export const EditScenario = () => {
                     }}
                   />{" "}
                 </div>
+
+                {steps?.feedbackC ? (
+                  <div style={{ width: "100%" }}>
+                    <p>Titel keuze C</p>{" "}
+                    <Form.Control
+                      style={{ marginBottom: "20px" }}
+                      placeholder="Titel keuze C"
+                      name="titleChoiceC"
+                      value={steps.titleChoiceC}
+                      onChange={(e) => {
+                        handleStepsUpdate(e.target.value, e.target.name);
+                      }}
+                    />
+                    <p>Youtube link - Keuze C</p>{" "}
+                    <Form.Control
+                      style={{ marginBottom: "20px" }}
+                      placeholder="Link van youtube video, keuze C"
+                      name="videoIdChoiceC"
+                      value={steps.videoIdChoiceC}
+                      onChange={(e) => {
+                        handleStepsUpdate(e.target.value, e.target.name);
+                      }}
+                    />{" "}
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
               <p>Feedback A</p>{" "}
               <Editor
