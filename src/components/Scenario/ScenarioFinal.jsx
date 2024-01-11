@@ -2,10 +2,9 @@ import React from "react";
 import YoutubeVideo from "./YoutubeVideo";
 import { useState, useEffect } from "react";
 import { getAnswers } from "../../services/scenarios";
-
+import Swal from "sweetalert2";
 const ScenarioFinal = ({ id, final, onReset }) => {
   const [answers, setAnswers] = useState();
-
   useEffect(() => {
     getAnswers(id).then((answers) => {
       setAnswers(answers);
@@ -43,7 +42,43 @@ const ScenarioFinal = ({ id, final, onReset }) => {
       <br></br>
       <div className="row">
         <div className="col-12">
-          <button className="btn btn-danger" onClick={onReset}>
+          <button
+            className="btn btn-danger"
+            onClick={() =>
+              Swal.fire({
+                title: "Ben jij zeker?",
+                text: "Deze actie is onomkeerbaar",
+                icon: "warning",
+                showCancelButton: true,
+
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ja, scenario opniew instellen!",
+                cancelButtonText: "Nee",
+                showLoaderOnConfirm: true,
+              }).then(async (result) => {
+                if (result.isConfirmed) {
+                  const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    },
+                  });
+                  Toast.fire({
+                    icon: "success",
+                    title: "Scenario opnieuw ingesteld",
+                  });
+
+                  onReset();
+                }
+              })
+            }
+          >
             Reset scenario
           </button>
         </div>

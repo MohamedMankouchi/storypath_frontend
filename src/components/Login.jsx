@@ -13,7 +13,8 @@ const Login = () => {
     fullName: "",
   });
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     fetch("https://storypathapi.onrender.com/login", {
       method: "POST",
       headers: {
@@ -68,7 +69,8 @@ const Login = () => {
       });
   };
 
-  const handleRegister = () => {
+  const handleRegister = (e) => {
+    e.preventDefault();
     fetch("https://storypathapi.onrender.com/register", {
       method: "POST",
       headers: {
@@ -128,70 +130,15 @@ const Login = () => {
         <>
           {" "}
           <h1 style={{ marginBottom: "50px" }}>Aanmelden</h1>
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-            <Form.Control
-              placeholder="Email"
-              name="email"
-              value={loginData.email}
-              onChange={(e) =>
-                setLoginData((prev) => ({
-                  ...prev,
-                  [e.target.name]: e.target.value,
-                }))
-              }
-            />
-          </InputGroup>
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="basic-addon1">Wachtwoord</InputGroup.Text>
-            <Form.Control
-              placeholder="Wachtwoord"
-              type="password"
-              name="password"
-              value={loginData.password}
-              onChange={(e) =>
-                setLoginData((prev) => ({
-                  ...prev,
-                  [e.target.name]: e.target.value,
-                }))
-              }
-            />
-          </InputGroup>
-          <br></br>
-          <Button variant="primary" onClick={handleLogin}>
-            Aanmelden
-          </Button>
-          <hr style={{ marginBottom: "50px", marginTop: "50px" }} />
-          <h1 style={{ marginBottom: "50px", marginTop: "50px" }}>
-            Registratie
-          </h1>
-          <InputGroup className="mb-3">
-            <InputGroup className="mb-3">
-              <InputGroup.Text id="basic-addon1">
-                Naam + Voornaam
-              </InputGroup.Text>
-              <Form.Control
-                placeholder="Naam + Voornaam"
-                name="fullName"
-                value={registerData.fullName}
-                onChange={(e) =>
-                  setRegisterData((prev) => ({
-                    ...prev,
-                    [e.target.name]: e.target.value,
-                  }))
-                }
-              />
-            </InputGroup>
-
+          <form typeof="submit" method="POST">
             <InputGroup className="mb-3">
               <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
               <Form.Control
                 placeholder="Email"
-                type="email"
                 name="email"
-                value={registerData.email}
+                value={loginData.email}
                 onChange={(e) =>
-                  setRegisterData((prev) => ({
+                  setLoginData((prev) => ({
                     ...prev,
                     [e.target.name]: e.target.value,
                   }))
@@ -204,21 +151,85 @@ const Login = () => {
                 placeholder="Wachtwoord"
                 type="password"
                 name="password"
-                value={registerData.password}
+                value={loginData.password}
                 onChange={(e) =>
-                  setRegisterData((prev) => ({
+                  setLoginData((prev) => ({
                     ...prev,
                     [e.target.name]: e.target.value,
                   }))
                 }
               />
             </InputGroup>
-          </InputGroup>
-          {alert}
-          <br></br>
-          <Button variant="primary" className="mb-5" onClick={handleRegister}>
-            Registreer
-          </Button>
+            <br></br>
+            <Button variant="primary" type="submit" onClick={handleLogin}>
+              Aanmelden
+            </Button>
+          </form>
+          <hr style={{ marginBottom: "50px", marginTop: "50px" }} />
+          <h1 style={{ marginBottom: "50px", marginTop: "50px" }}>
+            Registratie
+          </h1>
+          <form typeof="submit" method="POST">
+            <InputGroup className="mb-3">
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">
+                  Naam + Voornaam
+                </InputGroup.Text>
+                <Form.Control
+                  placeholder="Naam + Voornaam"
+                  name="fullName"
+                  value={registerData.fullName}
+                  onChange={(e) =>
+                    setRegisterData((prev) => ({
+                      ...prev,
+                      [e.target.name]: e.target.value,
+                    }))
+                  }
+                />
+              </InputGroup>
+
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                <Form.Control
+                  placeholder="Email"
+                  type="email"
+                  name="email"
+                  value={registerData.email}
+                  onChange={(e) =>
+                    setRegisterData((prev) => ({
+                      ...prev,
+                      [e.target.name]: e.target.value,
+                    }))
+                  }
+                />
+              </InputGroup>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">Wachtwoord</InputGroup.Text>
+                <Form.Control
+                  placeholder="Wachtwoord"
+                  type="password"
+                  name="password"
+                  value={registerData.password}
+                  onChange={(e) =>
+                    setRegisterData((prev) => ({
+                      ...prev,
+                      [e.target.name]: e.target.value,
+                    }))
+                  }
+                />
+              </InputGroup>
+            </InputGroup>
+            {alert}
+            <br></br>
+            <Button
+              variant="primary"
+              type="submit"
+              className="mb-5"
+              onClick={handleRegister}
+            >
+              Registreer
+            </Button>
+          </form>
         </>
       )}
     </div>

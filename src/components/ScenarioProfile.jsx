@@ -45,7 +45,12 @@ export const ScenarioProfile = (user) => {
           <Button
             variant="primary"
             onClick={() => {
-              if (ref.current.value == 0 || ref.current.value < 0) {
+              if (
+                ref.current.value == 0 ||
+                ref.current.value < 0 ||
+                Math.sign(ref.current.value) != 1 ||
+                Math.floor(ref.current.value) == 0
+              ) {
                 return;
               }
               window.location.href = `/makeScenario/${ref.current.value}`;

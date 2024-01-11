@@ -27,10 +27,10 @@ const router = createBrowserRouter(
       element: <InfoPage />,
       errorElement: <ErrorPage />,
       loader: checkUser,
-      
+
       children: [
         {
-          path: "/home",
+          path: "/",
           element: <Home />,
         },
 
@@ -55,16 +55,6 @@ const router = createBrowserRouter(
           element: <MakeScenario />,
         },
 
-        {
-          path: "/doelstellingen",
-          element: <Goals />,
-          loader: GoalLoader,
-        },
-        {
-          path: "/theorie",
-          element: <Theory />,
-          loader: TheoryLoader,
-        },
         {
           path: "/scenarios",
           element: <ScenariosPage />,

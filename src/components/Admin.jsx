@@ -9,7 +9,8 @@ export const Admin = () => {
     { id: "", fullName: "", email: "" },
   ]);
   const [show, setShow] = useState(false);
-
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [userData, setUserData] = useState({
     password: "",
     fullName: "",
@@ -21,10 +22,12 @@ export const Admin = () => {
     setUserData(el);
     setShow(true);
   };
+  const [isLoading, setIsLoading] = useState(true);
 
   const { user } = useOutletContext();
 
   const handleUpdate = () => {
+    setIsUpdating(true);
     fetch(`https://storypathapi.onrender.com/users/${userData.id}`, {
       method: "PUT",
       headers: {
@@ -36,6 +39,7 @@ export const Admin = () => {
       .then((res) => res.json())
       .then(async (data) => {
         if (data.status == 400 || data.status == 400) {
+          setIsUpdating(false);
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -71,7 +75,6 @@ export const Admin = () => {
         window.location.reload();
       });
   };
-  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch("https://storypathapi.onrender.com/users", {
       headers: {
@@ -105,6 +108,7 @@ export const Admin = () => {
       });
   }, []);
   const handleDelete = (userid) => {
+    setIsDeleting(true);
     fetch(`https://storypathapi.onrender.com/profile/${userid}`, {
       method: "DELETE",
       headers: {
@@ -115,6 +119,7 @@ export const Admin = () => {
       .then((res) => res.json())
       .then(async (data) => {
         if (data.status == 403 || data.status == 404) {
+          setIsDeleting(false);
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -206,8 +211,18 @@ export const Admin = () => {
           <Button variant="secondary" onClick={handleClose}>
             Sluiten
           </Button>
-          <Button variant="primary" onClick={handleUpdate}>
-            Wijzig
+          <Button
+            variant="primary"
+            onClick={handleUpdate}
+            disabled={isUpdating}
+          >
+            {isUpdating ? (
+              <Spinner animation="border" role="status" size="sm">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            ) : (
+              "Wijzig"
+            )}
           </Button>
         </Modal.Footer>
       </Modal>
@@ -241,7 +256,24 @@ export const Admin = () => {
                     </Button>{" "}
                     <Button
                       variant="danger"
-                      onClick={() => handleDelete(el.id)}
+                      onClick={() => {
+                        Swal.fire({
+                          title: "Ben jij zeker?",
+                          text: "Deze actie is onomkeerbaar",
+                          icon: "warning",
+                          showCancelButton: true,
+
+                          confirmButtonColor: "#3085d6",
+                          cancelButtonColor: "#d33",
+                          confirmButtonText: "Ja, verwijder!",
+                          cancelButtonText: "Nee",
+                          showLoaderOnConfirm: true,
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            handleDelete(el.id);
+                          }
+                        });
+                      }}
                     >
                       Verwijder
                     </Button>{" "}

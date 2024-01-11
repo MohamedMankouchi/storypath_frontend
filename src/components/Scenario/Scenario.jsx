@@ -27,7 +27,6 @@ function Scenario() {
   const [scenarioCompleted, setScenarioCompleted] = useState(false);
   const [tab, setTab] = useState("scenario");
 
-
   //on page load, get the saved status
   useEffect(() => {
     //get the status
@@ -116,17 +115,34 @@ function Scenario() {
   return (
     <>
       <ul class="nav nav-tabs">
-        <li class="nav-item" onClick={() => setTab("scenario")}>
-          <p class="nav-link active" aria-current="page" href="#">
+        <li
+          class="nav-item"
+          onClick={() => setTab("scenario")}
+          style={{ cursor: "pointer" }}
+        >
+          <p
+            class={tab == "scenario" ? "nav-link active" : "nav-link"}
+            aria-current="page"
+            href="#"
+          >
             Oefening
           </p>
         </li>
         <li class="nav-item" onClick={() => setTab("goals")}>
-          <div class="nav-link">Doelstellingen</div>
+          <div
+            class={tab == "goals" ? "nav-link active" : "nav-link"}
+            style={{ cursor: "pointer" }}
+          >
+            Doelstellingen
+          </div>
         </li>
         {scenario.theory ? (
           <li class="nav-item" onClick={() => setTab("theory")}>
-            <div class="nav-link" href="#">
+            <div
+              style={{ cursor: "pointer" }}
+              class={tab == "theory" ? "nav-link active" : "nav-link"}
+              href="#"
+            >
               Theorie
             </div>
           </li>

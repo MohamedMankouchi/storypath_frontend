@@ -72,7 +72,22 @@ export const ScenarioCard = (scenarios) => {
                   </Button>
                 </Link>
                 <Button
-                  onClick={() => handleDelete(el.id)}
+                  onClick={() => {
+                    Swal.fire({
+                      title: "Ben jij zeker?",
+                      text: "Deze actie is onomkeerbaar",
+                      icon: "warning",
+                      showCancelButton: true,
+                      confirmButtonColor: "#3085d6",
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "Ja, verwijder!",
+                      cancelButtonText: "Nee",
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        handleDelete(el.id);
+                      }
+                    });
+                  }}
                   style={{ marginLeft: "20px" }}
                   variant="danger"
                 >

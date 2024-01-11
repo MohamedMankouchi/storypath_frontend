@@ -34,7 +34,7 @@ const ExerciseFeedback = ({ step, answer, choice, onComplete }) => {
         </div>
         {step.titleChoiceC ? (
           <div className="p-2 flex-fill" style={flexbasis}>
-            <p>B: {step.titleChoiceC}</p>
+            <p>C: {step.titleChoiceC}</p>
             <YoutubeVideo videoId={step.videoIdChoiceC} />
             <div
               dangerouslySetInnerHTML={{ __html: step.feedbackC.explanation }}

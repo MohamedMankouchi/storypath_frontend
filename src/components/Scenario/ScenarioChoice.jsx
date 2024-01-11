@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import ScenarioFeedback from "./ScenarioFeedback";
 import { useEffect, useState } from "react";
 import YoutubeVideo from "./YoutubeVideo";
+import Swal from "sweetalert2";
 
 const ScenarioChoice = ({ step, onComplete, onReset }) => {
   const [choice, setChoice] = useState("A");
@@ -60,7 +61,7 @@ const ScenarioChoice = ({ step, onComplete, onReset }) => {
             </div>
             {step.titleChoiceC ? (
               <div className="p-2" style={flexbasis}>
-                <p>B: {step.titleChoiceC}</p>
+                <p>C: {step.titleChoiceC}</p>
                 <YoutubeVideo videoId={step.videoIdChoiceC} />
               </div>
             ) : null}
@@ -113,7 +114,43 @@ const ScenarioChoice = ({ step, onComplete, onReset }) => {
           >
             Krijg feedback
           </button>
-          <button className="btn btn-danger " onClick={() => onReset()}>
+          <button
+            className="btn btn-danger "
+            onClick={() =>
+              Swal.fire({
+                title: "Ben jij zeker?",
+                text: "Deze actie is onomkeerbaar",
+                icon: "warning",
+                showCancelButton: true,
+
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ja, scenario opniew instellen!",
+                cancelButtonText: "Nee",
+                showLoaderOnConfirm: true,
+              }).then(async (result) => {
+                if (result.isConfirmed) {
+                  const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    },
+                  });
+                  Toast.fire({
+                    icon: "success",
+                    title: "Scenario opnieuw ingesteld",
+                  });
+
+                  onReset();
+                }
+              })
+            }
+          >
             Reset Scenario
           </button>
         </div>

@@ -4,11 +4,12 @@ import { Navigate, Outlet, redirect, useOutletContext } from "react-router-dom";
 import { Teacher } from "../components/Teacher";
 import { ScenarioProfile } from "../components/ScenarioProfile";
 import { Admin } from "../components/Admin";
+import Spinner from "react-bootstrap/Spinner";
 import Swal from "sweetalert2";
 export const Profile = () => {
   const { user } = useOutletContext();
   const [show, setShow] = useState(false);
-
+  const [isUpdating, setIsUpdating] = useState(false);
   const [userData, setUserData] = useState({
     password: "",
   });
@@ -29,6 +30,7 @@ export const Profile = () => {
   const handleShow = () => setShow(true);
 
   const handleUpdate = () => {
+    setIsUpdating(true);
     fetch(`https://storypathapi.onrender.com/profile/${user.id}`, {
       method: "PUT",
       headers: {
@@ -39,6 +41,7 @@ export const Profile = () => {
       .then((res) => res.json())
       .then(async (data) => {
         if (data.status == 400) {
+          setIsUpdating(false);
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -56,12 +59,11 @@ export const Profile = () => {
           });
           return;
         }
-
         const Toast = Swal.mixin({
           toast: true,
           position: "top-end",
           showConfirmButton: false,
-          timer: 3000,
+          timer: 2000,
           timerProgressBar: true,
           didOpen: (toast) => {
             toast.onmouseenter = Swal.stopTimer;
@@ -107,8 +109,18 @@ export const Profile = () => {
               <Button variant="secondary" onClick={handleClose}>
                 Sluiten
               </Button>
-              <Button variant="primary" onClick={handleUpdate}>
-                Wijzig
+              <Button
+                variant="primary"
+                onClick={handleUpdate}
+                disabled={isUpdating}
+              >
+                {isUpdating ? (
+                  <Spinner animation="border" role="status" size="sm">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                ) : (
+                  "Wijzig"
+                )}
               </Button>
             </Modal.Footer>
           </Modal>

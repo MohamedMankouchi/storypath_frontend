@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { Outlet, useLoaderData } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import Home from "../components/Home";
 
 export async function checkUser() {
   const token = sessionStorage.getItem("token");

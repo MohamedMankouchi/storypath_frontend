@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Editor from "react-simple-wysiwyg";
 import Swal from "sweetalert2";
-
+import Spinner from "react-bootstrap/Spinner";
 export const MakeScenario = () => {
   const stepsParam = useParams();
   const [currentStep, setCurrentStep] = useState(0);
@@ -25,10 +25,11 @@ export const MakeScenario = () => {
       steps: [],
     },
   ];
-
+  const [isUpdating, setIsUpdating] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [changedData, setChangedData] = useState({});
   const { user } = useOutletContext();
+
   useEffect(() => {
     setChangedData(scenario[0]);
     setIsLoading(false);
@@ -46,8 +47,11 @@ export const MakeScenario = () => {
         videoIdChoiceA: "",
         titleChoiceB: "",
         videoIdChoiceB: "",
+        titleChoiceC: "",
+        videoIdChoiceC: "",
         feedbackA: { correct: false, explanation: "" },
         feedbackB: { correct: false, explanation: "" },
+        feedbackC: { correct: false, explanation: "" },
       };
 
       scenario[0].steps.push(newStep);
@@ -55,17 +59,52 @@ export const MakeScenario = () => {
   }
 
   const handleScenario = () => {
-    let missingFields = false;
+    if (
+      !changedData.title ||
+      !changedData.description ||
+      !changedData.guide ||
+      !changedData.goals.description ||
+      !changedData.theory.description ||
+      !changedData.final.paragraphs
+    ) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        },
+      });
+      Toast.fire({
+        icon: "error",
+        title: "Gelieve de ontbrekende velden in te vullen",
+      });
+      return;
+    }
+    let missingfields = false;
     changedData.steps.forEach((el) => {
-      for (var steps in el) {
-        if (el[steps] == "") {
-          missingFields = true;
-        }
-        missingFields = false;
+      if (
+        !el.description ||
+        !el.feedbackA.explanation ||
+        !el.feedbackB.explanation ||
+        !el.title ||
+        !el.titleChoiceA ||
+        !el.titleChoiceB ||
+        !el.videoIdChoiceA ||
+        !el.videoIdChoiceB ||
+        (el.feedbackA.correct == false &&
+          el.feedbackB.correct == false &&
+          el.feedbackC.correct == false)
+      ) {
+        missingfields = true;
+        return;
       }
     });
 
-    if (!changedData.title || !changedData.description) {
+    if (missingfields) {
       const Toast = Swal.mixin({
         toast: true,
         position: "top-end",
@@ -79,30 +118,12 @@ export const MakeScenario = () => {
       });
       Toast.fire({
         icon: "error",
-        title: "Please fill in the missing fields",
+        title: "Gelieve alle velden te vullen bij de stappen",
       });
       return;
     }
 
-    if (missingFields) {
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "error",
-        title: "Please fill in the missing fields",
-      });
-      return;
-    }
-
+    setIsUpdating(true);
     fetch("https://storypathapi.onrender.com/scenario", {
       method: "POST",
       headers: {
@@ -114,6 +135,7 @@ export const MakeScenario = () => {
       .then((res) => res.json())
       .then(async (data) => {
         if (data.status != 200) {
+          setIsUpdating(false);
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -163,11 +185,16 @@ export const MakeScenario = () => {
 
         newArray[currentStep]["feedbackB"] = {
           correct: false,
-          explanation: changedData.steps[currentStep][id].explanation,
+          explanation: changedData.steps[currentStep]["feedbackB"].explanation,
+        };
+
+        newArray[currentStep]["feedbackC"] = {
+          correct: false,
+          explanation: changedData.steps[currentStep]["feedbackC"].explanation,
         };
         setChangedData((prev) => ({ ...prev, steps: newArray }));
         return;
-      } else {
+      } else if (value == "Keuze B") {
         newArray[currentStep]["feedbackB"] = {
           correct: true,
           explanation: changedData.steps[currentStep][id].explanation,
@@ -175,7 +202,27 @@ export const MakeScenario = () => {
 
         newArray[currentStep]["feedbackA"] = {
           correct: false,
+          explanation: changedData.steps[currentStep]["feedbackA"].explanation,
+        };
+        newArray[currentStep]["feedbackC"] = {
+          correct: false,
+          explanation: changedData.steps[currentStep]["feedbackC"].explanation,
+        };
+        setChangedData((prev) => ({ ...prev, steps: newArray }));
+        return;
+      } else if (value == "Keuze C") {
+        newArray[currentStep]["feedbackC"] = {
+          correct: true,
           explanation: changedData.steps[currentStep][id].explanation,
+        };
+
+        newArray[currentStep]["feedbackA"] = {
+          correct: false,
+          explanation: changedData.steps[currentStep]["feedbackA"].explanation,
+        };
+        newArray[currentStep]["feedbackB"] = {
+          correct: false,
+          explanation: changedData.steps[currentStep]["feedbackB"].explanation,
         };
         setChangedData((prev) => ({ ...prev, steps: newArray }));
         return;
@@ -183,7 +230,7 @@ export const MakeScenario = () => {
 
       return;
     }
-    if (key == "feedbackA" || key == "feedbackB") {
+    if (key == "feedbackA" || key == "feedbackB" || key == "feedbackC") {
       newArray[currentStep][key] = {
         correct: changedData.steps[currentStep][key]["correct"],
         explanation: value,
@@ -218,11 +265,28 @@ export const MakeScenario = () => {
           "Aan het laden..."
         ) : (
           <>
-            <Link to={"/profile"}>
-              <Button style={{ marginBottom: "20px" }} variant="primary">
-                Terug naar profiel{" "}
-              </Button>{" "}
-            </Link>
+            <Button
+              onClick={() => {
+                Swal.fire({
+                  title: "Ben jij zeker?",
+                  text: "Deze actie is onomkeerbaar",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Ja, terug naar profiel",
+                  cancelButtonText: "Nee",
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    window.location.href = "/profile";
+                  }
+                });
+              }}
+              style={{ marginBottom: "20px" }}
+              variant="primary"
+            >
+              Terug naar profiel{" "}
+            </Button>{" "}
             <h2 style={{ marginBottom: "20px" }}>Maak een scenario </h2>
             <Form.Label htmlFor="title">Titel</Form.Label>
             <Form.Control
@@ -347,56 +411,84 @@ export const MakeScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Youtube video ID</p>{" "}
+              <p>Youtube link</p>{" "}
               <Form.Control
                 style={{ marginBottom: "20px" }}
-                placeholder="Id van youtube video"
+                placeholder="Link van youtube video"
                 name="videoId"
                 value={changedData.steps[currentStep].videoId}
                 onChange={(e) => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
               />
-              <p>Titel keuze A</p>{" "}
-              <Form.Control
-                style={{ marginBottom: "20px" }}
-                placeholder="Titel keuze A"
-                name="titleChoiceA"
-                value={changedData.steps[currentStep].titleChoiceA}
-                onChange={(e) => {
-                  handleStepsUpdate(e.target.value, e.target.name);
-                }}
-              />
-              <p>Youtube video ID - A</p>{" "}
-              <Form.Control
-                style={{ marginBottom: "20px" }}
-                placeholder="Id van youtube video, keuze A"
-                name="videoIdChoiceA"
-                value={changedData.steps[currentStep].videoIdChoiceA}
-                onChange={(e) => {
-                  handleStepsUpdate(e.target.value, e.target.name);
-                }}
-              />
-              <p>Titel keuze B</p>{" "}
-              <Form.Control
-                style={{ marginBottom: "20px" }}
-                placeholder="Titel keuze B"
-                name="titleChoiceB"
-                value={changedData.steps[currentStep].titleChoiceB}
-                onChange={(e) => {
-                  handleStepsUpdate(e.target.value, e.target.name);
-                }}
-              />
-              <p>Youtube video ID - B</p>{" "}
-              <Form.Control
-                style={{ marginBottom: "20px" }}
-                placeholder="Id van youtube video, keuze B"
-                name="videoIdChoiceB"
-                value={changedData.steps[currentStep].videoIdChoiceB}
-                onChange={(e) => {
-                  handleStepsUpdate(e.target.value, e.target.name);
-                }}
-              />{" "}
+              <div style={{ display: "flex", gap: "15px" }}>
+                <div style={{ width: "100%" }}>
+                  <p>Titel keuze A</p>{" "}
+                  <Form.Control
+                    style={{ marginBottom: "20px" }}
+                    placeholder="Titel keuze A"
+                    name="titleChoiceA"
+                    value={changedData.steps[currentStep].titleChoiceA}
+                    onChange={(e) => {
+                      handleStepsUpdate(e.target.value, e.target.name);
+                    }}
+                  />
+                  <p>Youtube link - Keuze A</p>{" "}
+                  <Form.Control
+                    style={{ marginBottom: "20px" }}
+                    placeholder="Link van youtube video, keuze A"
+                    name="videoIdChoiceA"
+                    value={changedData.steps[currentStep].videoIdChoiceA}
+                    onChange={(e) => {
+                      handleStepsUpdate(e.target.value, e.target.name);
+                    }}
+                  />
+                </div>
+                <div style={{ width: "100%" }}>
+                  <p>Titel keuze B</p>{" "}
+                  <Form.Control
+                    style={{ marginBottom: "20px" }}
+                    placeholder="Titel keuze B"
+                    name="titleChoiceB"
+                    value={changedData.steps[currentStep].titleChoiceB}
+                    onChange={(e) => {
+                      handleStepsUpdate(e.target.value, e.target.name);
+                    }}
+                  />
+                  <p>Youtube link - Keuze B</p>{" "}
+                  <Form.Control
+                    style={{ marginBottom: "20px" }}
+                    placeholder="Link van youtube video, keuze B"
+                    name="videoIdChoiceB"
+                    value={changedData.steps[currentStep].videoIdChoiceB}
+                    onChange={(e) => {
+                      handleStepsUpdate(e.target.value, e.target.name);
+                    }}
+                  />{" "}
+                </div>
+                <div style={{ width: "100%" }}>
+                  <p>Titel keuze C (optioneel)</p>{" "}
+                  <Form.Control
+                    style={{ marginBottom: "20px" }}
+                    placeholder="Titel keuze C"
+                    name="titleChoiceC"
+                    value={changedData.steps[currentStep].titleChoiceC}
+                    onChange={(e) => {
+                      handleStepsUpdate(e.target.value, e.target.name);
+                    }}
+                  />
+                  <p>Youtube link - Keuze C (optioneel) </p>{" "}
+                  <Form.Control
+                    style={{ marginBottom: "20px" }}
+                    placeholder="Link van youtube video, keuze C"
+                    name="videoIdChoiceC"
+                    value={changedData.steps[currentStep].videoIdChoiceC}
+                    onChange={(e) => {
+                      handleStepsUpdate(e.target.value, e.target.name);
+                    }}
+                  />{" "}
+                </div>
+              </div>
               <p>Feedback A</p>{" "}
               <Editor
                 style={{ marginBottom: "20px" }}
@@ -411,6 +503,15 @@ export const MakeScenario = () => {
                 style={{ marginBottom: "20px" }}
                 value={changedData.steps[currentStep].feedbackB?.explanation}
                 name="feedbackB"
+                onChange={(e) => {
+                  handleStepsUpdate(e.target.value, e.target.name);
+                }}
+              />
+              <p>Feedback C (optioneel)</p>{" "}
+              <Editor
+                style={{ marginBottom: "20px" }}
+                value={changedData.steps[currentStep].feedbackC?.explanation}
+                name="feedbackC"
                 onChange={(e) => {
                   handleStepsUpdate(e.target.value, e.target.name);
                 }}
@@ -444,12 +545,26 @@ export const MakeScenario = () => {
                   handleStepsUpdate(e.target.value, e.target.name, e.target.id)
                 }
               />
+              <Form.Check
+                style={{ marginBottom: "20px" }}
+                type="radio"
+                value="Keuze C"
+                label="Keuze C"
+                name="radio"
+                id="feedbackC"
+                checked={
+                  changedData?.steps[currentStep]?.feedbackC?.correct == true
+                }
+                onClick={(e) =>
+                  handleStepsUpdate(e.target.value, e.target.name, e.target.id)
+                }
+              />
             </div>
             <h2 style={{ marginBottom: "20px" }}>Eindpagina</h2>
-            <p>Id video</p>{" "}
+            <p>Youtube link - video laatste pagina</p>{" "}
             <Form.Control
               style={{ marginBottom: "20px" }}
-              placeholder="Id video voor laatste pagina"
+              placeholder="Link video voor laatste pagina"
               name="videoId"
               value={changedData.final.videoId}
               onChange={(e) => {
@@ -477,8 +592,15 @@ export const MakeScenario = () => {
               style={{ marginTop: "20px", marginBottom: "20px" }}
               variant="primary"
               onClick={handleScenario}
+              disabled={isUpdating}
             >
-              Maak scenario{" "}
+              {isUpdating ? (
+                <Spinner animation="border" role="status" size="sm">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              ) : (
+                "Maak scenario"
+              )}{" "}
             </Button>
           </>
         )

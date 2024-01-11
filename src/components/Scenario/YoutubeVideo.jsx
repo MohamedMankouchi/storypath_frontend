@@ -1,7 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const YoutubeVideo = ({ videoId }) => {
-  const src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+  let video_id = videoId.split("v=")[1];
+  console.log(video_id);
+  if (video_id == undefined) {
+    video_id = "py53-Lz2aS0";
+  } else {
+    let ampersandPosition = video_id.indexOf("&");
+
+    if (ampersandPosition != -1) {
+      video_id = video_id.substring(0, ampersandPosition);
+    }
+  }
+  const src = `https://www.youtube.com/embed/${video_id}?rel=0`;
 
   return (
     <iframe
