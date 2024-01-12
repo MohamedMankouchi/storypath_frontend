@@ -40,7 +40,7 @@ const ScenarioChoice = ({ step, onComplete, onReset }) => {
       ) : (
         <div>
           <p>
-            Stap {step.step}:{" "}
+            <strong>Stap {step.step}: </strong>
             <div dangerouslySetInnerHTML={{ __html: step.description }}></div>
           </p>
           <div className="row">
@@ -50,7 +50,7 @@ const ScenarioChoice = ({ step, onComplete, onReset }) => {
           </div>
           <br></br>
 
-          <div className="d-flex flex-row justify-content-start flex-no-wrap">
+          <div className="d-flex flex-wrap gap-5 justify-content-start flex-no-wrap">
             <div className="p-2" style={flexbasis}>
               <p>A: {step.titleChoiceA}</p>
               <YoutubeVideo videoId={step.videoIdChoiceA} />
@@ -109,13 +109,13 @@ const ScenarioChoice = ({ step, onComplete, onReset }) => {
           </FloatingLabel>
           <br></br>
           <button
-            className="btn btn-primary me-2"
+            className="btn btn-primary me-2 mb-3"
             onClick={() => getFeedback()}
           >
             Krijg feedback
           </button>
           <button
-            className="btn btn-danger "
+            className="btn btn-danger mb-3 "
             onClick={() =>
               Swal.fire({
                 title: "Ben jij zeker?",

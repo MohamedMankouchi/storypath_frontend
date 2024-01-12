@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link, NavLink, useOutletContext } from "react-router-dom";
+import Spinner from "react-bootstrap/Spinner";
 import Swal from "sweetalert2";
 
 export const ScenarioCard = (scenarios) => {
   const { data } = scenarios;
   const { user } = useOutletContext();
-
   const handleDelete = (id) => {
     fetch(`https://storypathapi.onrender.com/scenario/${id}`, {
       method: "DELETE",
@@ -53,7 +53,7 @@ export const ScenarioCard = (scenarios) => {
   return (
     <div>
       {data.map((el) => (
-        <Card className="mt-3" key={el.id}>
+        <Card className="mt-3 mb-3" key={el.id}>
           <Card.Body>
             <Card.Title>{el.title}</Card.Title>
             <Card.Text>
@@ -82,6 +82,7 @@ export const ScenarioCard = (scenarios) => {
                       cancelButtonColor: "#d33",
                       confirmButtonText: "Ja, verwijder!",
                       cancelButtonText: "Nee",
+                      showLoaderOnConfirm: true,
                     }).then((result) => {
                       if (result.isConfirmed) {
                         handleDelete(el.id);

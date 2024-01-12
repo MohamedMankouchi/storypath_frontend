@@ -22,10 +22,10 @@ const ScenariosPage = () => {
       ) : (
         <>
           {" "}
-          <div className="row">
-            <p>Kies hier je gewenste interactieve leerpad</p>
+          <p>Kies hier je gewenste interactieve leerpad</p>
+          <div className="d-flex gap-3 flex-wrap">
             {data.scenarios.map((e) => (
-              <div className="col-2 me-2" key={`button${e.id}`}>
+              <div key={`button${e.id}`}>
                 <Link to={`/scenarios/${e.id}`}>
                   <button
                     className={`btn ${

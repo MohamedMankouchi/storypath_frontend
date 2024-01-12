@@ -14,12 +14,15 @@ const ScenarioFinal = ({ id, final, onReset }) => {
   return (
     <>
       <div className="row">
-        <div className="col-12">
+        <div className="col-12 mb-3">
           {/* <h2>Volledig scenario</h2> */}
           <YoutubeVideo videoId={final.videoId} />
         </div>
 
-        <div dangerouslySetInnerHTML={{ __html: final.paragraphs }}></div>
+        <div
+          className="mb-3"
+          dangerouslySetInnerHTML={{ __html: final.paragraphs }}
+        ></div>
       </div>
       <br></br>
       <div className="row">
@@ -43,7 +46,7 @@ const ScenarioFinal = ({ id, final, onReset }) => {
       <div className="row">
         <div className="col-12">
           <button
-            className="btn btn-danger"
+            className="btn btn-danger mb-3"
             onClick={() =>
               Swal.fire({
                 title: "Ben jij zeker?",

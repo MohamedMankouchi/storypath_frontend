@@ -20,7 +20,10 @@ const ScenarioStart = ({ step, walkthrough, description, onClickStart }) => {
   return (
     <div>
       {/* <h4>Beschrijving van het scenario</h4> */}
-      <div dangerouslySetInnerHTML={{ __html: description }}></div>
+      <div
+        className="mt-3"
+        dangerouslySetInnerHTML={{ __html: description }}
+      ></div>
 
       {/* {step.goals ? 
             <div>
@@ -47,7 +50,7 @@ const ScenarioStart = ({ step, walkthrough, description, onClickStart }) => {
             </div> : null}
          */}
 
-      <h4>Werking van dit scenario</h4>
+      <h4 className="mb-3 mt-3">Werking van dit scenario</h4>
       {/* <p>{walkthrough}</p> */}
       <p>
         In dit interactief scenario ga je stap per stap een scene voorgeschoteld

@@ -148,7 +148,11 @@ function Scenario() {
           </li>
         ) : null}
       </ul>
-      {scenario === 0 ? <h1>Loading...</h1> : <h1>{scenario.title}</h1>}
+      {scenario === 0 ? (
+        <h1>Loading...</h1>
+      ) : (
+        <h1 className="mt-3 mb-3">{scenario.title}</h1>
+      )}
       {renderTab(tab)}
 
       {/* {step === 0 && !scenarioCompleted ? 

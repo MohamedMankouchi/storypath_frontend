@@ -10,14 +10,14 @@ const ExerciseFeedback = ({ step, answer, choice, onComplete }) => {
   return (
     <>
       <div className="row">
-        <div className="col-12">
+        <div className="col-12 mt-3">
           <p>
-            Stap {step.step} antwoord: {choice}: {answer}
+            <strong>Stap {step.step} </strong> : Antwoord: {choice}: {answer}
           </p>
         </div>
       </div>
       <h2>Feedback</h2>
-      <div className="d-flex justify-content-start flex-no-wrap md-3">
+      <div className="d-flex justify-content-start flex-wrap md-3 mb-5 gap-5 items-center">
         <div className="p-2" style={flexbasis}>
           <p>A: {step.titleChoiceA}</p>
           <YoutubeVideo videoId={step.videoIdChoiceA} />
@@ -25,7 +25,7 @@ const ExerciseFeedback = ({ step, answer, choice, onComplete }) => {
             dangerouslySetInnerHTML={{ __html: step.feedbackA.explanation }}
           ></div>
         </div>
-        <div className="p-2 flex-fill" style={flexbasis}>
+        <div className="p-2 flex" style={flexbasis}>
           <p>B: {step.titleChoiceB}</p>
           <YoutubeVideo videoId={step.videoIdChoiceB} />
           <div
@@ -33,7 +33,7 @@ const ExerciseFeedback = ({ step, answer, choice, onComplete }) => {
           ></div>
         </div>
         {step.titleChoiceC ? (
-          <div className="p-2 flex-fill" style={flexbasis}>
+          <div className="p-2 flex" style={flexbasis}>
             <p>C: {step.titleChoiceC}</p>
             <YoutubeVideo videoId={step.videoIdChoiceC} />
             <div
@@ -44,7 +44,7 @@ const ExerciseFeedback = ({ step, answer, choice, onComplete }) => {
       </div>
 
       <button
-        className="btn btn-primary"
+        className="btn btn-primary mb-3"
         onClick={() => onComplete(choice, answer)}
       >
         Volgende stap
