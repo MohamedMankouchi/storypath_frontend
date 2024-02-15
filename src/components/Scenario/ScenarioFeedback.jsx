@@ -24,23 +24,35 @@ const ExerciseFeedback = ({ step, answer, choice, onComplete }) => {
       <h2>Feedback</h2>
       <div className="d-flex justify-content-start flex-wrap md-3 mb-5 gap-5 items-center">
         <div className="p-2" style={flexbasis}>
-          <p>A: {step.titleChoiceA}</p>
-          <YoutubeVideo videoId={step.videoIdChoiceA} />
+          <p style={{ width: "450px" }}>A: {step.titleChoiceA}</p>
+          {step.videoIdChoiceA ? (
+            <YoutubeVideo videoId={step.videoIdChoiceA} />
+          ) : (
+            ""
+          )}{" "}
           <div
             dangerouslySetInnerHTML={{ __html: step.feedbackA.explanation }}
           ></div>
         </div>
         <div className="p-2 flex" style={flexbasis}>
-          <p>B: {step.titleChoiceB}</p>
-          <YoutubeVideo videoId={step.videoIdChoiceB} />
+          <p style={{ width: "450px" }}>B: {step.titleChoiceB}</p>
+          {step.videoIdChoiceB ? (
+            <YoutubeVideo videoId={step.videoIdChoiceB} />
+          ) : (
+            ""
+          )}{" "}
           <div
             dangerouslySetInnerHTML={{ __html: step.feedbackB.explanation }}
           ></div>
         </div>
         {step.titleChoiceC ? (
           <div className="p-2 flex" style={flexbasis}>
-            <p>C: {step.titleChoiceC}</p>
-            <YoutubeVideo videoId={step.videoIdChoiceC} />
+            <p style={{ width: "450px" }}>C: {step.titleChoiceC}</p>
+            {step.videoIdChoiceC ? (
+              <YoutubeVideo videoId={step.videoIdChoiceC} />
+            ) : (
+              ""
+            )}{" "}
             <div
               dangerouslySetInnerHTML={{ __html: step.feedbackC.explanation }}
             ></div>
