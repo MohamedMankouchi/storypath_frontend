@@ -12,7 +12,12 @@ const ExerciseFeedback = ({ step, answer, choice, onComplete }) => {
       <div className="row">
         <div className="col-12 mt-3">
           <p>
-            <strong>Stap {step.step} </strong> : Antwoord: {choice}: {answer}
+            <strong>Stap {step.step} </strong> : Antwoord: {choice}:{" "}
+            {step[`feedback${choice}`]["correct"] ? (
+              <strong>Juist</strong>
+            ) : (
+              <strong>Fout</strong>
+            )}
           </p>
         </div>
       </div>

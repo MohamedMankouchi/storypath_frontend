@@ -33,7 +33,7 @@ const ScenarioFinal = ({ id, final, onReset }) => {
               ? answers.map((a, i) => (
                   <li className="col-12" key={i}>
                     <p>
-                      Stap {a.step}: Keuze {a.choice} - {a.feedback}
+                      Stap {a.step}: Keuze {a.choice}
                     </p>
                   </li>
                 ))

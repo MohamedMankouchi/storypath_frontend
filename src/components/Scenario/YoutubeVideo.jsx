@@ -2,7 +2,6 @@ import React from "react";
 
 const YoutubeVideo = ({ videoId }) => {
   let video_id = videoId.split("v=")[1];
-  console.log(video_id);
   if (video_id == undefined) {
     video_id = "py53-Lz2aS0";
   } else {

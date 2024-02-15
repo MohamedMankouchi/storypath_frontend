@@ -105,7 +105,6 @@ function Scenario() {
         );
       }
     } else if (tab === "goals") {
-      // console.log(scenario.goals)
       return <GoalsSpecific data={scenario.goals} />;
     } else if (tab === "theory") {
       return <TheorySpecific data={scenario.theory} />;

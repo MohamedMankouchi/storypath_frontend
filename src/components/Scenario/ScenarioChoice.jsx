@@ -40,7 +40,7 @@ const ScenarioChoice = ({ step, onComplete, onReset }) => {
       ) : (
         <div>
           <p>
-            <strong>Stap {step.step}: </strong>
+            <strong>{step.title}</strong>
             <div dangerouslySetInnerHTML={{ __html: step.description }}></div>
           </p>
           <div className="row">
@@ -52,17 +52,30 @@ const ScenarioChoice = ({ step, onComplete, onReset }) => {
 
           <div className="d-flex flex-wrap gap-5 justify-content-start flex-no-wrap">
             <div className="p-2" style={flexbasis}>
-              <p>A: {step.titleChoiceA}</p>
-              <YoutubeVideo videoId={step.videoIdChoiceA} />
+              <p style={{ width: "450px" }}>A: {step.titleChoiceA}</p>
+              {step.videoIdChoiceA ? (
+                <YoutubeVideo videoId={step.videoIdChoiceA} />
+              ) : (
+                ""
+              )}{" "}
             </div>
             <div className="p-2" style={flexbasis}>
-              <p>B: {step.titleChoiceB}</p>
-              <YoutubeVideo videoId={step.videoIdChoiceB} />
+              <p style={{ width: "450px" }}>B: {step.titleChoiceB}</p>
+              {step.videoIdChoiceB ? (
+                <YoutubeVideo videoId={step.videoIdChoiceB} />
+              ) : (
+                ""
+              )}{" "}
             </div>
             {step.titleChoiceC ? (
               <div className="p-2" style={flexbasis}>
-                <p>C: {step.titleChoiceC}</p>
-                <YoutubeVideo videoId={step.videoIdChoiceC} />
+                <p style={{ width: "450px" }}>C: {step.titleChoiceC}</p>
+                {step.videoIdChoiceC}
+                {step.videoIdChoiceC ? (
+                  <YoutubeVideo videoId={step.videoIdChoiceC} />
+                ) : (
+                  ""
+                )}
               </div>
             ) : null}
           </div>

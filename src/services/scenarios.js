@@ -18,7 +18,6 @@ export async function createStatus(fullname, email, scenarioId) {
     status = [scenario];
   }
 
-  console.log(status);
   await set(status);
   return status;
 }
@@ -139,7 +138,6 @@ export async function resetScenario(id) {
 
 export async function getAnswers(id) {
   let status = await localforage.getItem("scenarioStatus");
-  console.log(id);
   let scenario = status.find((status) => status.scenarioId == id);
   if (scenario) {
     return scenario.answers;

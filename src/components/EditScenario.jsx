@@ -66,8 +66,6 @@ export const EditScenario = () => {
         !el.title ||
         !el.titleChoiceA ||
         !el.titleChoiceB ||
-        !el.videoIdChoiceA ||
-        !el.videoIdChoiceB ||
         (el.feedbackA.correct == false &&
           el.feedbackB.correct == false &&
           el.feedbackC.correct == false)
